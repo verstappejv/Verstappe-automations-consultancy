@@ -144,9 +144,10 @@ header.hide{transform:translateY(-100%)}
 .cards{display:grid;gap:18px;margin-top:48px}
 .c2{grid-template-columns:repeat(2,1fr)}.c3{grid-template-columns:repeat(3,1fr)}
 .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s;position:relative;overflow:hidden}
-.card:before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(56,189,248,.12),transparent 45%);opacity:0;transition:opacity .4s}
+.card:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(56,189,248,.12),transparent 45%);opacity:0;transition:opacity .4s}
 .card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(30,58,95,.35);border-color:#bfd6ea}
 .card:hover:before{opacity:1}
+form.card label,form.card .full{position:relative;z-index:1}
 .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:#eaf5fd;color:var(--blue);border:1px solid #cfe6f6}
 .ico svg{width:22px;height:22px}
 .card h3{font-size:18px;font-weight:600;margin-top:20px;letter-spacing:-.01em}
