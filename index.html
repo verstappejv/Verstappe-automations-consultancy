@@ -3,9 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Verstappe Automations &amp; Consultancy | Interim management voor het MKB</title>
-<meta name="description" content="Van strategie tot uitvoering: interim management voor het MKB met focus op operations, finance, data en automatisering.">
-<meta property="og:title" content="Verstappe Automations &amp; Consultancy">
+<title>Verstappe Interim &amp; Consultancy | Interim management voor het MKB</title>
+<meta name="description" content="Interim management voor het MKB, versterkt met slimme automatisering: strategie, operations, finance en data.">
+<meta property="og:title" content="Verstappe Interim &amp; Consultancy">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://verstappejv.github.io/Verstappe-automations-consultancy/">
+<meta property="og:image" content="https://verstappejv.github.io/Verstappe-automations-consultancy/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:description" content="Interim management voor het MKB: strategie, operations, finance &amp; automatisering.">
 <link rel="icon" href="img/icoon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,6 +65,7 @@ header.hide{transform:translateY(-100%)}
 @keyframes draw{0%{stroke-dashoffset:90}45%,100%{stroke-dashoffset:0}}
 .totop{position:fixed;right:22px;bottom:22px;z-index:60;width:56px;height:56px;border-radius:50%;background:#fff;box-shadow:0 10px 30px -12px rgba(30,58,95,.45);display:grid;place-items:center;opacity:0;transform:translateY(20px) scale(.9);transition:opacity .5s var(--ease),transform .5s var(--ease);pointer-events:none}
 .totop.show{opacity:1;transform:none;pointer-events:auto}
+.totop.show.away{opacity:0;transform:translateY(20px) scale(.9);pointer-events:none}
 .totop .prog-ring{position:absolute;inset:0;transform:rotate(-90deg)}
 .totop .prog-ring circle{fill:none;stroke:var(--line);stroke-width:2.5}
 .totop .prog-ring #pring{stroke:var(--sky);stroke-dasharray:170;stroke-dashoffset:170;stroke-linecap:round}
@@ -142,11 +149,26 @@ header.hide{transform:translateY(-100%)}
 .card:hover .si-spark .s2{animation:twinkle 1.5s var(--ease) .25s both}
 .card:hover .si-spark .s3{animation:twinkle 1.5s var(--ease) .5s both}
 @keyframes twinkle{0%,100%{transform:scale(1) rotate(0);fill:transparent}40%{transform:scale(1.25) rotate(20deg);fill:currentColor}}
+.consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:90;max-width:560px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:0 20px 50px -20px rgba(30,58,95,.45);opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.consent.show{opacity:1;transform:none;pointer-events:auto}
+.consent p{font-size:14px;line-height:1.6;color:var(--muted)}
+.consent p strong{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
+.consent a{color:var(--blue)}
+.cbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.cbtns .btn{height:42px;font-size:14px;padding:0 18px;cursor:pointer;font-family:inherit}
+button.btn{border:0}button.btn-ghost{border:1px solid #cfd7e2}
+.calph{min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:28px;border:1px dashed #cfd7e2;border-radius:12px;background:var(--surface)}
+.calph p{color:var(--muted);font-size:15px;max-width:520px}
+.alt-contact{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:15px;color:var(--muted)}
+.alt-contact a{color:var(--navy);font-weight:500;border-bottom:1px solid #cfe0ee}
+.alt-contact a:hover{color:var(--blue);border-color:var(--blue)}
+.alt-contact .dot{opacity:.5}
 .agenda{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;scroll-margin-top:90px}
 .agenda-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:18px}
 .agenda-head h3{font-size:21px;font-weight:600;margin-top:12px;letter-spacing:-.01em}
 .agenda-head p{color:var(--muted);margin-top:6px;font-size:15px}
 #cal-inline{width:100%;min-height:560px;overflow:auto;border-radius:12px}
+#cal-inline:has(.calph){min-height:0}
 @media (max-width:760px){.agenda{padding:18px}}
 .alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .pad{padding:110px 0}
@@ -286,13 +308,13 @@ body.typing .cur,body.typing .ring{opacity:0!important}
 
 <header id="hdr">
   <div class="wrap nav">
-    <a href="#top" class="brand" aria-label="Verstappe Automations &amp; Consultancy"><svg class="logo-anim" viewBox="0 20 560 98" role="img"><title>Verstappe Automations &amp; Consultancy</title>
+    <a href="#top" class="brand" aria-label="Verstappe Interim &amp; Consultancy"><svg class="logo-anim" viewBox="0 20 560 98" role="img"><title>Verstappe Interim &amp; Consultancy</title>
 <g fill="none" stroke-linecap="round" stroke-width="9">
 <path d="M20 30 C 54 30, 60 66, 88 66" stroke="#38BDF8"/><path d="M20 66 L 88 66" stroke="#0284C7"/><path d="M20 102 C 54 102, 60 66, 88 66" stroke="#1E3A5F"/><path d="M88 66 L 112 66" stroke="#1E3A5F"/></g>
 <g class="pulse" fill="none" stroke-linecap="round" stroke-width="4.5" stroke="#fff"><path pathLength="100" d="M20 30 C 54 30, 60 66, 88 66 L 112 66"/><path pathLength="100" d="M20 66 L 112 66"/><path pathLength="100" d="M20 102 C 54 102, 60 66, 88 66 L 112 66"/></g>
 <path class="tip" d="M108 50 L 130 66 L 108 82 Z" fill="#1E3A5F"/>
 <text x="150" y="72" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="700" fill="#1E3A5F" letter-spacing="-1">Verstappe</text>
-<text x="152" y="108" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600" fill="#0284C7" letter-spacing="1.2">AUTOMATIONS &amp; CONSULTANCY</text></svg></a>
+<text x="152" y="108" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600" fill="#0284C7" letter-spacing="1.2">INTERIM &amp; CONSULTANCY</text></svg></a>
     <ul id="menu">
       <li><a class="l" href="#expertise">Expertise</a></li>
       <li><a class="l" href="#werkwijze">Werkwijze</a></li>
@@ -308,11 +330,11 @@ body.typing .cur,body.typing .ring{opacity:0!important}
   <div class="grid"></div><div class="orb" id="orb"></div>
   <div class="wrap">
     <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Oplossingen voor het MKB</p>
-    <h1 id="h1">Interim leiderschap dat het MKB <em>sneller en slimmer</em> laat draaien</h1>
+    <h1 id="h1">Interim management voor het MKB, versterkt met <em>slimme automatisering</em></h1>
     <p class="rv">Van strategie tot uitvoering: ik geef MKB-bedrijven grip op hun koers, operatie, financiën en data. Ik breng structuur in processen, maak resultaten zichtbaar en automatiseer wat sneller en slimmer kan.</p>
     <div class="ctas rv">
       <a class="btn btn-primary mag" href="#agenda">Plan een kennismaking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn-ghost mag" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Stuur een e-mail</a>
+      <a class="btn btn-ghost mag" href="mailto:verstappe.j.v@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Stuur een e-mail</a>
     </div>
     <a href="#expertise" class="scrollhint rv"><span class="downmark"><svg viewBox="0 0 150 140"><use href="#mark"/></svg></span>Scroll</a>
   </div>
@@ -357,7 +379,7 @@ body.typing .cur,body.typing .ring{opacity:0!important}
 
 <section class="alt pad" id="samenwerkingen">
   <div class="wrap">
-    <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Samenwerkingen</p>
+    <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Partners &amp; opdrachtgevers</p>
     <h2 class="rv">Samenwerkingen</h2>
   </div>
   <div class="marquee rv"><div class="track" id="track">
@@ -400,36 +422,20 @@ body.typing .cur,body.typing .ring{opacity:0!important}
   <div class="wrap">
     <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Contact</p>
     <h2 class="rv">Laten we kennismaken</h2>
-    <p class="rv" style="color:var(--muted);margin-top:14px;max-width:620px;line-height:1.65">Benieuwd wat ik voor uw organisatie kan betekenen? Plan direct een kennismakingsgesprek van 30 minuten of stuur een bericht.</p>
-    <div class="grid2">
-      <div class="cta rv"><svg class="wm" viewBox="0 0 150 140"><use href="#mark"/></svg>
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#fff" stroke-width="1.4" style="position:relative;z-index:1"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
-        <h3 style="position:relative;z-index:1">Kennismakingsgesprek</h3>
-        <p style="position:relative;z-index:1">30 minuten, online of telefonisch. Kies hieronder direct een moment dat u schikt.</p>
-        <a class="btn mag" href="https://cal.com/joep-verstappe-oqfhpw/30min" target="_blank" rel="noopener">Open mijn agenda ↗</a>
-        <div class="mail"><small>Liever direct mailen?</small>verstappe.j.v@gmail.com</div>
-      </div>
-      <form class="card rv" id="form" style="padding:34px">
-        <label>Naam<input required name="naam"></label>
-        <label>Bedrijf<input required name="bedrijf"></label>
-        <label>E-mail<input required type="email" name="email"></label>
-        <label>Telefoon <span class="note" style="font-weight:400">(optioneel)</span><input name="tel"></label>
-        <label class="full">Bericht<textarea rows="5" required name="bericht"></textarea></label>
-        <div class="full" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap"><span class="note" id="fnote">Bij verzenden opent uw e-mailprogramma met het bericht klaar.</span><button class="btn btn-primary mag" style="border:0;font:inherit;font-weight:500">Verstuur bericht</button></div>
-      </form>
-    </div>
-    <div class="agenda rv" id="agenda">
+    <p class="rv" style="color:var(--muted);margin-top:14px;max-width:620px;line-height:1.65">Benieuwd wat ik als interim voor uw organisatie kan betekenen? Plan direct een vrijblijvend kennismakingsgesprek van 30 minuten.</p>
+    <div class="agenda rv" id="agenda" style="margin-top:40px">
       <div class="agenda-head"><div><span class="tag">Direct inplannen</span><h3>Kies een moment voor een kennismaking</h3><p>Uw afspraak staat direct in mijn agenda en u ontvangt automatisch een bevestiging.</p></div><a class="btn btn-ghost mag" href="https://cal.com/joep-verstappe-oqfhpw/30min" target="_blank" rel="noopener">Openen in nieuw venster ↗</a></div>
       <div id="cal-inline" data-lenis-prevent></div>
       <noscript><a href="https://cal.com/joep-verstappe-oqfhpw/30min">Plan een kennismaking via Cal.com</a></noscript>
     </div>
+    <div class="alt-contact rv"><span>Liever eerst mailen?</span><a href="mailto:verstappe.j.v@gmail.com">verstappe.j.v@gmail.com</a><span class="dot">·</span><a href="https://www.linkedin.com/in/joep-verstappe-a88b52178/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <img src="img/logo.svg" alt="Verstappe Automations &amp; Consultancy">
-    <ul><li>KvK 89596447</li><li><a href="mailto:verstappe.j.v@gmail.com">verstappe.j.v@gmail.com</a></li><li><a href="https://www.linkedin.com/in/joep-verstappe-a88b52178/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="privacy.html">Privacyverklaring</a></li></ul>
+    <img src="img/logo.svg" alt="Verstappe Interim &amp; Consultancy">
+    <ul><li>KvK 89596447</li><li><a href="mailto:verstappe.j.v@gmail.com">verstappe.j.v@gmail.com</a></li><li><a href="https://www.linkedin.com/in/joep-verstappe-a88b52178/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="privacy.html">Privacyverklaring</a></li><li><a href="#" onclick="cookieSettings();return false">Cookie-instellingen</a></li></ul>
   </div>
 </footer>
 
@@ -455,6 +461,7 @@ if(reduce){finish();return}
 st.classList.add('story');
 new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){play();o.disconnect()}})},{threshold:.55}).observe(st);
 })();
+new IntersectionObserver(function(es){es.forEach(function(e){document.getElementById('totop').classList.toggle('away',e.isIntersecting)})},{threshold:.05}).observe(document.getElementById('agenda'));
 var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
 var hdr=document.getElementById('hdr'),last=0,orb=document.getElementById('orb'),photo=document.getElementById('photo');
 function onScroll(){var y=window.scrollY;if(!reduce){var la=document.querySelector('.logo-anim');la.classList.add('flowing');clearTimeout(window.__lf);window.__lf=setTimeout(function(){la.classList.remove('flowing')},900)}var mx2=document.documentElement.scrollHeight-innerHeight;document.getElementById('pring').style.strokeDashoffset=170-170*Math.min(1,y/mx2);document.getElementById('totop').classList.toggle('show',y>innerHeight*.8);hdr.classList.toggle('scrolled',y>10);hdr.classList.toggle('hide',y>last&&y>400);last=y;if(!reduce){orb.style.transform='translate3d(0,'+(y*0.25)+'px,0)';var r=photo.getBoundingClientRect();var p=(r.top+r.height/2-innerHeight/2)/innerHeight;photo.style.transform='translate3d(0,'+(p*-30)+'px,0)'}}
@@ -463,14 +470,32 @@ document.querySelectorAll('.card').forEach(function(c){c.addEventListener('point
 var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
 if(fine&&!reduce){document.querySelectorAll('.mag').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();var x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform='translate('+x*.25+'px,'+y*.35+'px)'});b.addEventListener('pointerleave',function(){b.style.transition='transform .6s cubic-bezier(.22,1,.36,1)';b.style.transform='';setTimeout(function(){b.style.transition=''},600)})})}
 if(fine){var cur=document.getElementById('cur'),ring=document.getElementById('ring'),mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY;cur.style.transform='translate3d('+mx+'px,'+my+'px,0)'});(function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform='translate3d('+rx+'px,'+ry+'px,0)';requestAnimationFrame(loop)})();document.querySelectorAll('#form input,#form textarea,#cal-inline').forEach(function(f){f.addEventListener('pointerenter',function(){document.body.classList.add('typing')});f.addEventListener('pointerleave',function(){document.body.classList.remove('typing')})});document.querySelectorAll('a,button,.card:not(form),.logo').forEach(function(el){el.addEventListener('pointerenter',function(){ring.classList.add('big')});el.addEventListener('pointerleave',function(){ring.classList.remove('big')})});document.addEventListener('pointerleave',function(){cur.style.opacity=ring.style.opacity=0});document.addEventListener('pointerenter',function(){cur.style.opacity=ring.style.opacity=1})}
-document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();var f=e.target;var g=function(n){return (f.elements[n].value||'').trim()};var sub='Kennismaking: '+g('naam')+(g('bedrijf')?' ('+g('bedrijf')+')':'');var body=['Naam: '+g('naam'),'Bedrijf: '+g('bedrijf'),'E-mail: '+g('email'),'Telefoon: '+(g('tel')||'-'),'','Bericht:',g('bericht')].join('\r\n');window.location.href='mailto:verstappe.j.v@gmail.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);document.getElementById('fnote').textContent='Uw e-mailprogramma is geopend. Controleer het bericht en klik op verzenden.'});
+
 })();
 </script>
+<div class="consent" id="consent" role="dialog" aria-live="polite" aria-label="Cookiemelding">
+  <p><strong>Cookies</strong> Deze website zelf plaatst geen tracking- of marketingcookies. De ingebouwde agenda van Cal.com kan wel cookies plaatsen. Kiest u voor alleen noodzakelijk, dan opent de agenda in een apart venster. <a href="privacy.html">Lees meer</a></p>
+  <div class="cbtns"><button type="button" class="btn btn-ghost" id="c-no">Alleen noodzakelijk</button><button type="button" class="btn btn-primary" id="c-yes">Accepteren</button></div>
+</div>
 <script>
+(function(){
+var KEY='va-consent',box=document.getElementById('consent'),holder=document.getElementById('cal-inline'),loaded=false;
+function get(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+function set(v){try{localStorage.setItem(KEY,v)}catch(e){}}
+function loadCal(){if(loaded)return;loaded=true;holder.innerHTML='';
 (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init", "30min", {origin:"https://cal.com"});
 Cal.ns["30min"]("inline", {elementOrSelector:"#cal-inline", config:{layout:"month_view"}, calLink:"joep-verstappe-oqfhpw/30min"});
 Cal.ns["30min"]("ui", {cssVarsPerTheme:{light:{"cal-brand":"#1E3A5F"},dark:{"cal-brand":"#38BDF8"}}, hideEventTypeDetails:false, layout:"month_view"});
+
+}
+function placeholder(){holder.innerHTML='<div class="calph"><p>De agenda wordt niet ingeladen omdat u alleen noodzakelijke cookies heeft gekozen.</p><div class="cbtns"><a class="btn btn-primary" href="https://cal.com/joep-verstappe-oqfhpw/30min" target="_blank" rel="noopener">Agenda openen in nieuw venster ↗</a><button type="button" class="btn btn-ghost" id="c-load">Toch hier laden</button></div></div>';document.getElementById('c-load').onclick=function(){set('yes');loadCal()}}
+var c=get();
+if(c==='yes'){loadCal()}else{if(c==='no'){placeholder()}else{placeholder();setTimeout(function(){box.classList.add('show')},900)}}
+document.getElementById('c-yes').onclick=function(){set('yes');box.classList.remove('show');loadCal()};
+document.getElementById('c-no').onclick=function(){set('no');box.classList.remove('show');placeholder()};
+window.cookieSettings=function(){box.classList.add('show')};
+})();
 </script>
 </body>
 </html>
