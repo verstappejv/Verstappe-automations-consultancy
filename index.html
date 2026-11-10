@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verstappe Automations &amp; Consultancy | Interim management voor het MKB</title>
+<meta name="description" content="Van strategie tot uitvoering: interim management voor het MKB met focus op operations, finance, data en automatisering.">
+<meta property="og:title" content="Verstappe Automations &amp; Consultancy">
+<meta property="og:description" content="Interim management voor het MKB: strategie, operations, finance &amp; automatisering.">
+<link rel="icon" href="img/icoon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1E3A5F;--navy2:#162c49;--sky:#38BDF8;--blue:#0284C7;--ink:#252a31;--muted:#5d6876;--line:#e4e8ee;--surface:#f6f8fb;--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+section{scroll-margin-top:80px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.eyebrow .em{width:22px;height:20px;flex:none}
+h2{font-size:clamp(28px,4vw,42px);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-top:14px;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px;border-radius:999px;font-weight:500;font-size:15px;transition:background .3s var(--ease),color .3s,border-color .3s;will-change:transform}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{background:var(--blue)}
+.btn-ghost{border:1px solid #cfd7e2;color:var(--ink);background:#fff}
+.btn-ghost:hover{border-color:var(--navy);color:var(--navy)}
+.btn svg{width:16px;height:16px}
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,box-shadow .4s,transform .5s var(--ease)}
+header.scrolled{background:rgba(255,255,255,.86);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line)}
+header.hide{transform:translateY(-100%)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.nav img{height:50px}
+.nav ul{display:flex;gap:30px;list-style:none;align-items:center}
+.nav ul a.l{font-size:14px;color:var(--muted);position:relative}
+.nav ul a.l:after{content:"";position:absolute;left:0;bottom:-6px;height:1.5px;width:100%;background:var(--navy);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav ul a.l:hover{color:var(--ink)}
+.nav ul a.l:hover:after{transform:scaleX(1);transform-origin:left}
+.burger{display:none;background:none;border:0;width:40px;height:40px}
+.hero{position:relative;padding:170px 0 110px;overflow:hidden}
+.hero .orb{position:absolute;right:-220px;top:-180px;width:760px;height:760px;border-radius:50%;background:linear-gradient(135deg,#BFE8FA,#38BDF8 55%,#0284C7);opacity:.16;filter:blur(2px)}
+.hero .grid{position:absolute;inset:0;background-image:linear-gradient(to right,#eef2f6 1px,transparent 1px),linear-gradient(to bottom,#eef2f6 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,#000 30%,transparent 75%)}
+.hero h1{position:relative;font-size:clamp(38px,6.2vw,72px);line-height:1.04;letter-spacing:-.035em;font-weight:600;max-width:900px;margin-top:22px}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em}
+.hero h1 .w span{display:inline-block;transform:translateY(105%);transition:transform 1s var(--ease)}
+.hero.in h1 .w span{transform:none}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{position:relative;max-width:620px;font-size:clamp(16px,1.6vw,19px);line-height:1.65;color:var(--muted);margin-top:26px}
+.hero .ctas{position:relative;display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+.scrollhint{position:relative;margin-top:70px;display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.scrollhint i{width:1px;height:46px;background:linear-gradient(var(--navy),transparent);animation:drip 2.2s var(--ease) infinite;transform-origin:top}
+@keyframes drip{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.scrollhint{display:inline-flex}
+.downmark{width:56px;height:56px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:#fff;animation:bob 2.4s var(--ease) infinite}
+.downmark svg{width:32px;height:30px;transform:rotate(90deg)}
+.downmark .m1,.downmark .m3{stroke-dasharray:90;animation:draw 2.4s var(--ease) infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+@keyframes draw{0%{stroke-dashoffset:90}45%,100%{stroke-dashoffset:0}}
+.totop{position:fixed;right:22px;bottom:22px;z-index:60;width:56px;height:56px;border-radius:50%;background:#fff;box-shadow:0 10px 30px -12px rgba(30,58,95,.45);display:grid;place-items:center;opacity:0;transform:translateY(20px) scale(.9);transition:opacity .5s var(--ease),transform .5s var(--ease);pointer-events:none}
+.totop.show{opacity:1;transform:none;pointer-events:auto}
+.totop .prog-ring{position:absolute;inset:0;transform:rotate(-90deg)}
+.totop .prog-ring circle{fill:none;stroke:var(--line);stroke-width:2.5}
+.totop .prog-ring #pring{stroke:var(--sky);stroke-dasharray:170;stroke-dashoffset:170;stroke-linecap:round}
+.totop .upmark{width:26px;height:24px;transform:rotate(-90deg);transition:transform .4s var(--ease)}
+.totop:hover .upmark{transform:rotate(-90deg) translateX(4px)}
+.wm{position:absolute;right:-30px;bottom:30px;width:240px;height:224px;opacity:.07;filter:brightness(4) grayscale(1);pointer-events:none}
+.scrollhint i{display:none}
+.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pad{padding:110px 0}
+.cards{display:grid;gap:18px;margin-top:48px}
+.c2{grid-template-columns:repeat(2,1fr)}.c3{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s;position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(56,189,248,.12),transparent 45%);opacity:0;transition:opacity .4s}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(30,58,95,.35);border-color:#bfd6ea}
+.card:hover:before{opacity:1}
+.ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:#eaf5fd;color:var(--blue);border:1px solid #cfe6f6}
+.ico svg{width:22px;height:22px}
+.card h3{font-size:18px;font-weight:600;margin-top:20px;letter-spacing:-.01em}
+.card p{font-size:15px;line-height:1.65;color:var(--muted);margin-top:10px}
+.bar{margin-top:18px;border-radius:18px;background:var(--navy);color:#fff;padding:34px;display:flex;gap:22px;align-items:flex-start;position:relative;overflow:hidden}
+.bar:after{content:"";position:absolute;right:-120px;top:-160px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.45),transparent 65%)}
+.bar .ico{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff;flex:none}
+.bar h3{font-size:19px;font-weight:600}
+.bar p{color:rgba(255,255,255,.78);line-height:1.65;margin-top:8px;max-width:720px}
+.sub{font-size:15px;font-weight:600;margin-top:64px}
+.skill{padding:24px}
+.skill .ico{width:40px;height:40px}
+.skill h3{margin-top:16px;font-size:16px}
+.skill p{font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:56px;position:relative}
+.steps:before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;background:var(--line)}
+.steps .prog{position:absolute;left:0;top:22px;height:1px;background:var(--navy);width:0;transition:width 1.6s var(--ease)}
+.steps.in .prog{width:100%}
+.step .n{position:relative;width:44px;height:44px;border-radius:50%;border:1px solid var(--navy);background:#fff;display:grid;place-items:center;font-weight:600;color:var(--navy);font-size:14px}
+.step h3{font-size:18px;font-weight:600;margin-top:22px}
+.step p{color:var(--muted);line-height:1.65;font-size:15px;margin-top:8px}
+.marquee{margin-top:48px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.track{display:flex;width:max-content;animation:scroll 32s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.logo{width:220px;height:120px;display:grid;place-items:center;border-right:1px solid var(--line)}
+.logo img{max-height:56px;max-width:70%;border-radius:8px;filter:grayscale(1);opacity:.7;transition:filter .5s,opacity .5s,transform .5s var(--ease)}
+.logo:hover img{filter:none;opacity:1;transform:scale(1.06)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.about{position:relative;overflow:hidden}
+.agrid{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center}
+.about .photo{position:relative;width:100%;max-width:520px}
+.about .photo img{width:100%;display:block}
+.about .photo:after{content:"";position:absolute;left:-80px;bottom:18%;width:160px;border-top:1.5px dashed #c5cfda}
+.lead{font-size:18px;line-height:1.7;color:var(--muted);margin-top:18px}
+.proj{margin-top:28px;border:1px solid var(--line);border-left:0;border-radius:0;padding:4px 0 4px 22px;position:relative}
+.proj:before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px;background:linear-gradient(var(--sky),var(--blue))}
+.proj{border:0}
+.tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:#eaf5fd;border:1px solid #cfe6f6;border-radius:999px;padding:5px 11px}
+.proj h3{font-size:21px;font-weight:600;letter-spacing:-.01em;margin-top:14px;line-height:1.3}
+.proj p{color:var(--muted);line-height:1.7;margin-top:10px;font-size:15.5px}
+.proj strong{color:var(--ink);font-weight:600}
+.proj blockquote{margin-top:16px;font-size:20px;font-weight:500;color:var(--navy);letter-spacing:-.01em}
+.about .btn{margin-top:30px}
+.practice{margin-top:22px}
+.plabel{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.pcase{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;transition:transform .4s var(--ease),border-color .4s}
+.pcase:hover{transform:translateY(-3px);border-color:#bfd6ea}
+.pcase strong{display:block;font-size:15px;color:var(--navy)}
+.pcase span{display:block;font-size:13.5px;line-height:1.55;color:var(--muted);margin-top:4px}
+@media (max-width:600px){.pgrid{grid-template-columns:1fr}}
+.card.feat{background:var(--navy);border-color:var(--navy);color:#fff}
+.card.feat p{color:rgba(255,255,255,.78)}
+.card.feat .ico{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff}
+.card.feat:before{background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(56,189,248,.3),transparent 45%)}
+.contact .grid2{display:grid;grid-template-columns:2fr 3fr;gap:18px;margin-top:48px}
+.cta{border-radius:18px;background:var(--navy);color:#fff;padding:36px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.cta:after{content:"";position:absolute;left:-120px;bottom:-200px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.35),transparent 65%)}
+.cta h3{font-size:22px;font-weight:600;margin-top:22px}
+.cta p{color:rgba(255,255,255,.78);margin-top:8px;line-height:1.6}
+.cta .btn{background:#fff;color:var(--navy);margin-top:28px;align-self:flex-start;position:relative;z-index:1}
+.cta .mail{margin-top:auto;padding-top:28px;border-top:1px solid rgba(255,255,255,.2);font-size:14px;position:relative;z-index:1}
+.cta .mail small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:6px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{font-size:13px;font-weight:500;display:grid;gap:8px}
+input,textarea{font:inherit;font-size:15px;border:1px solid #d5dce5;border-radius:12px;padding:12px 14px;background:#fff;transition:border-color .3s,box-shadow .3s}
+input:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(56,189,248,.18)}
+.full{grid-column:1/-1}
+.note{font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:40px 0;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer img{height:34px}
+footer ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.cur,.ring{position:fixed;left:0;top:0;pointer-events:none;z-index:999;border-radius:50%;display:none}
+.cur{width:8px;height:8px;margin:-4px 0 0 -4px;background:var(--navy)}
+.ring{width:38px;height:38px;margin:-19px 0 0 -19px;border:1.5px solid var(--sky);transition:width .35s var(--ease),height .35s var(--ease),margin .35s var(--ease),background .35s,border-color .35s}
+.ring.big{width:70px;height:70px;margin:-35px 0 0 -35px;background:rgba(56,189,248,.14);border-color:rgba(2,132,199,.5)}
+@media (hover:hover) and (pointer:fine){.cur,.ring{display:block}body,a,button,input,textarea{cursor:none}}
+.badge{position:fixed;left:16px;bottom:16px;z-index:60;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12px;color:var(--muted);box-shadow:0 6px 20px -10px rgba(0,0,0,.25)}
+@media (max-width:900px){.c3{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.steps:before,.steps .prog{display:none}.contact .grid2{grid-template-columns:1fr}.agrid{grid-template-columns:1fr;gap:36px}.about .photo{max-width:380px;margin:0 auto}.about .photo:after{display:none}}
+@media (max-width:760px){.nav ul{display:none}.burger{display:block}.nav ul.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;background:#fff;padding:20px 24px;gap:18px;border-bottom:1px solid var(--line)}.c2,.c3,.steps{grid-template-columns:1fr}form{grid-template-columns:1fr}.pad{padding:80px 0}.hero{padding:130px 0 80px}.about .photo{width:min(340px,100%)}.nav img{height:32px}.logo{width:170px}}
+@media (prefers-reduced-motion:reduce){.rv,.hero h1 .w span{opacity:1;transform:none;transition:none}.track{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="mark" viewBox="0 0 150 140"><g fill="none" stroke-linecap="round" stroke-width="10"><path class="m1" d="M14 34 C 48 34, 54 70, 82 70" stroke="#38BDF8"/><path class="m2" d="M14 70 L 82 70" stroke="#0284C7"/><path class="m3" d="M14 106 C 48 106, 54 70, 82 70" stroke="#1E3A5F"/><path d="M82 70 L 108 70" stroke="#1E3A5F"/></g><path d="M104 52 L 130 70 L 104 88 Z" fill="#1E3A5F"/></symbol></defs></svg>
+<div class="cur" id="cur"></div><div class="ring" id="ring"></div>
+<a href="#top" class="totop" id="totop" aria-label="Naar boven"><svg class="prog-ring" viewBox="0 0 60 60"><circle cx="30" cy="30" r="27"/><circle id="pring" cx="30" cy="30" r="27"/></svg><svg class="upmark" viewBox="0 0 150 140"><use href="#mark"/></svg></a>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top"><img src="img/logo.svg" alt="Verstappe Automations &amp; Consultancy"></a>
+    <ul id="menu">
+      <li><a class="l" href="#expertise">Expertise</a></li>
+      <li><a class="l" href="#werkwijze">Werkwijze</a></li>
+      <li><a class="l" href="#samenwerkingen">Samenwerkingen</a></li>
+      <li><a class="l" href="#over-mij">Over mij</a></li>
+      <li><a class="btn btn-primary mag" href="#contact" style="height:40px;padding:0 18px;font-size:14px">Plan een kennismaking</a></li>
+    </ul>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#252a31" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="grid"></div><div class="orb" id="orb"></div>
+  <div class="wrap">
+    <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Interim-bestuurder voor het MKB</p>
+    <h1 id="h1">Interim leiderschap dat het MKB <em>sneller en slimmer</em> laat draaien</h1>
+    <p class="rv">Van strategie tot uitvoering: ik geef MKB-bedrijven grip op hun koers, operatie, financiën en data. Ik breng structuur in processen, maak resultaten zichtbaar en automatiseer wat sneller en slimmer kan.</p>
+    <div class="ctas rv">
+      <a class="btn btn-primary mag" href="#contact">Plan een kennismaking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost mag" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Stuur een e-mail</a>
+    </div>
+    <a href="#expertise" class="scrollhint rv"><span class="downmark"><svg viewBox="0 0 150 140"><use href="#mark"/></svg></span>Scroll</a>
+  </div>
+</section>
+
+<section class="alt pad" id="expertise">
+  <div class="wrap">
+    <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Expertise</p>
+    <h2 class="rv">Waar ik het verschil maak</h2>
+    <div class="cards c3">
+      <article class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><h3>Strategie &amp; koers</h3><p>Samen met directie en aandeelhouders een heldere koers bepalen en die vertalen naar concrete doelen, prioriteiten en een plan dat de organisatie ook echt uitvoert.</p></article>
+      <article class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M6 9v4a2 2 0 0 0 2 2h7"/></svg></div><h3>Operations &amp; procesinrichting</h3><p>Heldere workflows, duidelijke verantwoordelijkheden en een operatie die voorspelbaar draait. Ik breng structuur waar het nu op mensen en losse lijstjes leunt.</p></article>
+      <article class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></div><h3>Finance &amp; Order-to-Cash</h3><p>Van order tot betaling zonder ruis: snellere facturatie, minder openstaande posten en een gezondere cashflow. Ik stroomlijn en automatiseer het hele Order-to-Cash-proces.</p></article>
+      <article class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>Data &amp; sturing</h3><p>Financiële analyses en heldere dashboards die laten zien waar het geld verdiend en verloren wordt, zodat de directie stuurt op feiten in plaats van onderbuikgevoel.</p></article>
+      <article class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></div><h3>Leiderschap in verandering</h3><p>Tijdelijk aan het roer of als rechterhand van de directie bij groei, transitie of een leiderschapsvacuüm. Ik neem verantwoordelijkheid en draag sterker over.</p></article>
+      <article class="card feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Automatisering &amp; efficiency</h3><p>Elke opdracht kijk ik waar handwerk, dubbel werk en wachttijd zitten. Met slimme automatisering en AI-tools houden teams tijd over voor het werk dat er echt toe doet.</p></article>
+    </div>
+    <p class="sub rv">Kernvaardigheden</p>
+    <div class="cards c3" style="margin-top:20px">
+      <article class="card skill rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7"/></svg></div><h3>Power Automate &amp; Google Apps Script</h3><p>Workflows en scripts die systemen aan elkaar koppelen en terugkerende taken automatisch afhandelen, in Microsoft 365 én Google Workspace.</p></article>
+      <article class="card skill rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3h14v18l-3-2-2 2-2-2-2 2-2-2-3 2z"/></svg></div><h3>Order-to-Cash</h3><p>Het hele traject van order en levering tot factuur en betaling: sneller, foutlozer en met minder openstaande posten.</p></article>
+      <article class="card skill rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m3 17 6-6 4 4 8-8M14 7h7v7"/></svg></div><h3>Financiële analyse</h3><p>Kostprijs-, marge- en cashflowanalyses als onderbouwing voor scherpe, tijdige beslissingen.</p></article>
+      <article class="card skill rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M6 9v4a2 2 0 0 0 2 2h7"/></svg></div><h3>Workflowstructurering</h3><p>Processen in kaart brengen, verantwoordelijkheden helder beleggen en overbodige stappen schrappen.</p></article>
+      <article class="card skill rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Procesautomatisering</h3><p>Repeterend handwerk wegautomatiseren door systemen te koppelen en slimme workflows in te richten.</p></article>
+      <article class="card skill rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l1.8 4.7L18 9.5l-4.2 1.8L12 16l-1.8-4.7L6 9.5l4.2-1.8zM19 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></div><h3>AI-toepassingen</h3><p>Praktische AI-tools inzetten waar ze echt tijd besparen, van documentverwerking tot klantcommunicatie.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="werkwijze">
+  <div class="wrap">
+    <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Werkwijze</p>
+    <h2 class="rv">Van eerste gesprek tot een sterke overdracht</h2>
+    <div class="steps" id="steps"><div class="prog"></div>
+      <div class="step rv"><div class="n">1</div><h3>Kennismaking</h3><p>In een vrijblijvend gesprek bespreken we de situatie en de opgave.</p></div>
+      <div class="step rv"><div class="n">2</div><h3>Analyse</h3><p>In de eerste weken breng ik organisatie, processen en knelpunten in kaart.</p></div>
+      <div class="step rv"><div class="n">3</div><h3>Uitvoering</h3><p>Ik stuur op concrete doelen, verbeter processen en automatiseer waar het loont.</p></div>
+      <div class="step rv"><div class="n">4</div><h3>Overdracht</h3><p>Ik borg de resultaten en draag over aan een vaste opvolger of het team.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt pad" id="samenwerkingen">
+  <div class="wrap">
+    <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Samenwerkingen</p>
+    <h2 class="rv">Organisaties waarmee ik heb samengewerkt</h2>
+  </div>
+  <div class="marquee rv"><div class="track" id="track">
+    <div class="logo"><img src="img/nextgen.webp" alt="NextGen" title="NextGen"></div>
+    <div class="logo"><img src="img/gwynt.webp" alt="Gwynt" title="Gwynt"></div>
+    <div class="logo"><img src="img/torpstra.webp" alt="Torpstra Performance Improvement" title="Torpstra Performance Improvement"></div>
+    <div class="logo"><img src="img/salohe.webp" alt="Salohe" title="Salohe"></div>
+    <div class="logo"><img src="img/kroonkozijn.webp" alt="Kroonkozijn B.V." title="Kroonkozijn B.V."></div>
+    <div class="logo"><img src="img/boot-groningen.webp" alt="Boot Groningen B.V." title="Boot Groningen B.V."></div>
+  </div></div>
+</section>
+
+<section class="pad about" id="over-mij">
+  <div class="wrap agrid">
+    <div class="photo rv"><img id="photo" src="img/joep.webp" alt="Joep Verstappe"></div>
+    <div class="atext">
+    <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Over mij</p>
+    <h2 class="rv">Van strategie tot automatisering die in de praktijk werkt</h2>
+    <p class="lead rv">Ik ben Joep Verstappe. Ik verbind strategie, operatie en technologie: van scherpe analyse en heldere processen tot automatisering die teams echt tijd oplevert.</p>
+    <div class="proj rv">
+      <span class="tag">Uitgelichte projecten</span>
+      <h3>Hoe automatisering duurzame operaties kan verbeteren</h3>
+      <p><strong>Bekers als portemonnee?</strong> Door RFID-chips in herbruikbare bekers te verwerken, worden de bekers zelf het identificatiemiddel bij selfservice-tapsystemen. Ik onderzocht hoe RFID-bekers in combinatie met geautomatiseerde drankautomaten de operationele efficiëntie op evenementen verhogen en zo de plastic voetafdruk verlagen.</p>
+      <blockquote>“I connect for a sustainable future.”</blockquote>
+      <div class="practice">
+        <span class="plabel">Nu al in de praktijk</span>
+        <div class="pgrid">
+          <div class="pcase"><strong>Tomorrowland</strong><span>Sinds 2025 alleen nog bekers met RFID-chip, gekoppeld aan het cashless polsbandje. Het statiegeld komt automatisch terug bij inleveren.</span></div>
+          <div class="pcase"><strong>Royal Antwerp FC</strong><span>RFID-bekers gekoppeld aan de betaalkaart in het stadion: kortere rijen aan de bar en geen wegwerpbekers meer.</span></div>
+        </div>
+      </div>
+    </div>
+    <a class="btn btn-ghost mag" href="https://www.linkedin.com/in/joep-verstappe-a88b52178/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg> Bekijk mijn LinkedIn-profiel</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt pad contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Contact</p>
+    <h2 class="rv">Laten we kennismaken</h2>
+    <p class="rv" style="color:var(--muted);margin-top:14px;max-width:620px;line-height:1.65">Benieuwd wat ik voor uw organisatie kan betekenen? Plan direct een kennismakingsgesprek van 30 minuten of stuur een bericht.</p>
+    <div class="grid2">
+      <div class="cta rv"><svg class="wm" viewBox="0 0 150 140"><use href="#mark"/></svg>
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#fff" stroke-width="1.4" style="position:relative;z-index:1"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+        <h3 style="position:relative;z-index:1">Kennismakingsgesprek</h3>
+        <p style="position:relative;z-index:1">30 minuten, online of telefonisch. Stuur een korte mail en ik stel een paar momenten voor.</p>
+        <a class="btn mag" href="mailto:verstappe.j.v@gmail.com?subject=Kennismakingsgesprek">Plan een kennismaking</a>
+        <div class="mail"><small>Liever direct mailen?</small>verstappe.j.v@gmail.com</div>
+      </div>
+      <form class="card rv" id="form" style="padding:34px">
+        <label>Naam<input required name="naam"></label>
+        <label>Bedrijf<input required name="bedrijf"></label>
+        <label>E-mail<input required type="email" name="email"></label>
+        <label>Telefoon <span class="note" style="font-weight:400">(optioneel)</span><input name="tel"></label>
+        <label class="full">Bericht<textarea rows="5" required name="bericht"></textarea></label>
+        <div class="full" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap"><span class="note" id="fnote">Bij verzenden opent uw e-mailprogramma met het bericht klaar.</span><button class="btn btn-primary mag" style="border:0;font:inherit;font-weight:500">Verstuur bericht</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.svg" alt="Verstappe Automations &amp; Consultancy">
+    <ul><li>KvK 89596447</li><li><a href="mailto:verstappe.j.v@gmail.com">verstappe.j.v@gmail.com</a></li><li><a href="https://www.linkedin.com/in/joep-verstappe-a88b52178/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="privacy.html">Privacyverklaring</a></li></ul>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var lenis=null;
+try{if(!reduce&&window.Lenis){lenis=new Lenis({duration:1.15,smoothWheel:true});(function raf(t){lenis.raf(t);requestAnimationFrame(raf)})(performance.now())}}catch(e){}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');var el=document.querySelector(id);if(!el)return;e.preventDefault();document.getElementById('menu').classList.remove('open');if(lenis)lenis.scrollTo(el,{offset:id==='#top'?0:-70});else el.scrollIntoView({behavior:'smooth'})})});
+var h1=document.getElementById('h1');
+function split(node){var out=[];node.childNodes.forEach(function(c){if(c.nodeType===3){c.textContent.split(/(\s+)/).forEach(function(p){if(!p)return;if(/^\s+$/.test(p))out.push(document.createTextNode(p));else{var w=document.createElement('span');w.className='w';var s=document.createElement('span');s.textContent=p;w.appendChild(s);out.push(w)}})}else{c.textContent.split(/(\s+)/).forEach(function(p){if(!p)return;if(/^\s+$/.test(p)){out.push(document.createTextNode(p));return}var clone=c.cloneNode(false);clone.textContent=p;var w=document.createElement('span');w.className='w';var s=document.createElement('span');s.appendChild(clone);w.appendChild(s);out.push(w)})}});return out}
+var parts=split(h1);h1.innerHTML='';parts.forEach(function(p){h1.appendChild(p)});
+h1.querySelectorAll('.w > span').forEach(function(s,i){s.style.transitionDelay=(120+i*70)+'ms'});
+requestAnimationFrame(function(){setTimeout(function(){document.querySelector('.hero').classList.add('in')},60)});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv').forEach(function(el){var sib=Array.prototype.indexOf.call(el.parentNode.children,el);if(el.closest('.cards')||el.closest('.steps'))el.style.transitionDelay=(sib%3)*90+'ms';io.observe(el)});
+io.observe(document.getElementById('steps'));
+var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
+var hdr=document.getElementById('hdr'),last=0,orb=document.getElementById('orb'),photo=document.getElementById('photo');
+function onScroll(){var y=window.scrollY;var mx2=document.documentElement.scrollHeight-innerHeight;document.getElementById('pring').style.strokeDashoffset=170-170*Math.min(1,y/mx2);document.getElementById('totop').classList.toggle('show',y>innerHeight*.8);hdr.classList.toggle('scrolled',y>10);hdr.classList.toggle('hide',y>last&&y>400);last=y;if(!reduce){orb.style.transform='translate3d(0,'+(y*0.25)+'px,0)';var r=photo.getBoundingClientRect();var p=(r.top+r.height/2-innerHeight/2)/innerHeight;photo.style.transform='translate3d(0,'+(p*-30)+'px,0)'}}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+if(fine&&!reduce){document.querySelectorAll('.mag').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();var x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform='translate('+x*.25+'px,'+y*.35+'px)'});b.addEventListener('pointerleave',function(){b.style.transition='transform .6s cubic-bezier(.22,1,.36,1)';b.style.transform='';setTimeout(function(){b.style.transition=''},600)})})}
+if(fine){var cur=document.getElementById('cur'),ring=document.getElementById('ring'),mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY;cur.style.transform='translate3d('+mx+'px,'+my+'px,0)'});(function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform='translate3d('+rx+'px,'+ry+'px,0)';requestAnimationFrame(loop)})();document.querySelectorAll('a,button,.card,input,textarea,.logo').forEach(function(el){el.addEventListener('pointerenter',function(){ring.classList.add('big')});el.addEventListener('pointerleave',function(){ring.classList.remove('big')})});document.addEventListener('pointerleave',function(){cur.style.opacity=ring.style.opacity=0});document.addEventListener('pointerenter',function(){cur.style.opacity=ring.style.opacity=1})}
+document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();var f=e.target;var g=function(n){return (f.elements[n].value||'').trim()};var sub='Kennismaking: '+g('naam')+(g('bedrijf')?' ('+g('bedrijf')+')':'');var body=['Naam: '+g('naam'),'Bedrijf: '+g('bedrijf'),'E-mail: '+g('email'),'Telefoon: '+(g('tel')||'-'),'','Bericht:',g('bericht')].join('\r\n');window.location.href='mailto:verstappe.j.v@gmail.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);document.getElementById('fnote').textContent='Uw e-mailprogramma is geopend. Controleer het bericht en klik op verzenden.'});
+})();
+</script>
+</body>
+</html>
