@@ -164,6 +164,10 @@ header.hide{transform:translateY(-100%)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:56px;position:relative}
 .steps:before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;background:var(--line)}
 .steps .prog{position:absolute;left:0;top:21px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--sky),var(--navy));width:0;transition:width 1.2s var(--ease)}
+.endpt{position:absolute;right:-2px;top:22px;width:30px;height:30px;margin-top:-15px;border-radius:50%;background:#fff;border:1.5px solid var(--line);display:grid;place-items:center;transition:background .6s var(--ease),border-color .6s,transform .6s var(--ease),box-shadow .6s}
+.endpt svg{width:16px;height:16px;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .6s var(--ease) .3s}
+.endpt.done{background:var(--navy);border-color:var(--navy);transform:scale(1.08);box-shadow:0 0 0 8px rgba(56,189,248,.15)}
+.endpt.done svg{stroke-dashoffset:0}
 .arrows{position:absolute;left:0;right:0;top:12px;height:20px;pointer-events:none}
 .arrows svg{position:absolute;width:30px;height:28px;margin-top:-3px;transform:translateX(-50%);background:#fff;padding:0 3px;box-sizing:content-box;transition:transform .5s var(--ease)}
 .arrows svg:nth-child(1){left:calc(12.5% + 18px)}.arrows svg:nth-child(2){left:calc(37.5% + 25px)}.arrows svg:nth-child(3){left:calc(62.5% + 32px)}
@@ -247,7 +251,7 @@ footer ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
 .ring.big{width:70px;height:70px;margin:-35px 0 0 -35px;background:rgba(56,189,248,.14);border-color:rgba(2,132,199,.5)}
 @media (hover:hover) and (pointer:fine){.cur,.ring{display:block}body,a,button,input,textarea{cursor:none}}
 .badge{position:fixed;left:16px;bottom:16px;z-index:60;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:12px;color:var(--muted);box-shadow:0 6px 20px -10px rgba(0,0,0,.25)}
-@media (max-width:900px){.c3{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.steps:before,.steps .prog,.arrows{display:none}.contact .grid2{grid-template-columns:1fr}.agrid{grid-template-columns:1fr;gap:36px}.about .photo{max-width:380px;margin:0 auto}.about .photo:after{display:none}}
+@media (max-width:900px){.c3{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.steps:before,.steps .prog,.arrows,.endpt{display:none}.contact .grid2{grid-template-columns:1fr}.agrid{grid-template-columns:1fr;gap:36px}.about .photo{max-width:380px;margin:0 auto}.about .photo:after{display:none}}
 @media (max-width:760px){.nav ul{display:none}.burger{display:block}.nav ul.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;background:#fff;padding:20px 24px;gap:18px;border-bottom:1px solid var(--line)}.c2,.c3,.steps{grid-template-columns:1fr}form{grid-template-columns:1fr}.pad{padding:80px 0}.hero{padding:130px 0 80px}.about .photo{width:min(340px,100%)}.nav img{height:32px}.logo{width:170px}}
 @media (prefers-reduced-motion:reduce){.rv,.hero h1 .w span{opacity:1;transform:none;transition:none}.track{animation:none}}
 </style>
@@ -319,7 +323,7 @@ footer ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Werkwijze</p>
     <h2 class="rv">Van eerste gesprek tot een sterke overdracht</h2>
-    <div class="steps" id="steps"><div class="prog"></div><div class="arrows" aria-hidden="true"><svg viewBox="0 0 150 140"><use href="#mark"/></svg><svg viewBox="0 0 150 140"><use href="#mark"/></svg><svg viewBox="0 0 150 140"><use href="#mark"/></svg></div>
+    <div class="steps" id="steps"><div class="prog"></div><div class="endpt" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 12.5 4 4 8-9"/></svg></div><div class="arrows" aria-hidden="true"><svg viewBox="0 0 150 140"><use href="#mark"/></svg><svg viewBox="0 0 150 140"><use href="#mark"/></svg><svg viewBox="0 0 150 140"><use href="#mark"/></svg></div>
       <div class="step s1 rv"><div class="n">1</div><h3>Kennismaking</h3><p>In een vrijblijvend gesprek bespreken we de situatie en de opgave.</p></div>
       <div class="step s2 rv"><div class="n">2</div><h3>Analyse</h3><p>In de eerste weken breng ik organisatie, processen en knelpunten in kaart.</p></div>
       <div class="step s3 rv"><div class="n">3</div><h3>Uitvoering</h3><p>Ik stuur op concrete doelen, verbeter processen en automatiseer waar het loont.</p></div>
@@ -416,8 +420,8 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 document.querySelectorAll('.rv').forEach(function(el){var sib=Array.prototype.indexOf.call(el.parentNode.children,el);if(el.closest('.cards')||el.closest('.steps'))el.style.transitionDelay=(sib%3)*90+'ms';io.observe(el)});
 (function(){var st=document.getElementById('steps'),steps=[].slice.call(st.querySelectorAll('.step')),arrows=[].slice.call(st.querySelectorAll('.arrows svg')),prog=st.querySelector('.prog'),timers=[];
 function T(fn,ms){timers.push(setTimeout(fn,ms))}
-function finish(){steps.forEach(function(sp){sp.classList.add('on','done')});arrows.forEach(function(a){a.classList.add('go')});prog.style.width='100%'}
-function play(){var t=400;steps.forEach(function(sp,i){var words=sp.querySelector('p').textContent.trim().split(/\s+/).length;T(function(){if(i>0){steps[i-1].classList.remove('now');steps[i-1].classList.add('done');arrows[i-1].classList.add('go')}sp.classList.add('on','now');prog.style.width='calc('+(i*25)+'% + '+(i*7+22)+'px)'},t);t+=1000+words*170});T(function(){prog.style.width='100%';steps[3].classList.remove('now');steps[3].classList.add('done')},t)}
+function finish(){st.querySelector('.endpt').classList.add('done');steps.forEach(function(sp){sp.classList.add('on','done')});arrows.forEach(function(a){a.classList.add('go')});prog.style.width='100%'}
+function play(){var t=400;steps.forEach(function(sp,i){var words=sp.querySelector('p').textContent.trim().split(/\s+/).length;T(function(){if(i>0){steps[i-1].classList.remove('now');steps[i-1].classList.add('done');arrows[i-1].classList.add('go')}sp.classList.add('on','now');prog.style.width='calc('+(i*25)+'% + '+(i*7+22)+'px)'},t);t+=1000+words*170});T(function(){prog.style.width='100%';steps[3].classList.remove('now');steps[3].classList.add('done')},t);T(function(){st.querySelector('.endpt').classList.add('done')},t+1100)}
 if(reduce){finish();return}
 st.classList.add('story');
 new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){play();o.disconnect()}})},{threshold:.55}).observe(st);
