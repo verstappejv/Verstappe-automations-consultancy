@@ -142,6 +142,12 @@ header.hide{transform:translateY(-100%)}
 .card:hover .si-spark .s2{animation:twinkle 1.5s var(--ease) .25s both}
 .card:hover .si-spark .s3{animation:twinkle 1.5s var(--ease) .5s both}
 @keyframes twinkle{0%,100%{transform:scale(1) rotate(0);fill:transparent}40%{transform:scale(1.25) rotate(20deg);fill:currentColor}}
+.agenda{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;scroll-margin-top:90px}
+.agenda-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.agenda-head h3{font-size:21px;font-weight:600;margin-top:12px;letter-spacing:-.01em}
+.agenda-head p{color:var(--muted);margin-top:6px;font-size:15px}
+#cal-inline{width:100%;min-height:560px;overflow:auto;border-radius:12px}
+@media (max-width:760px){.agenda{padding:18px}}
 .alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .pad{padding:110px 0}
 .cards{display:grid;gap:18px;margin-top:48px}
@@ -292,7 +298,7 @@ body.typing .cur,body.typing .ring{opacity:0!important}
       <li><a class="l" href="#werkwijze">Werkwijze</a></li>
       <li><a class="l" href="#samenwerkingen">Samenwerkingen</a></li>
       <li><a class="l" href="#over-mij">Over mij</a></li>
-      <li><a class="btn btn-primary mag" href="#contact" style="height:40px;padding:0 18px;font-size:14px">Plan een kennismaking</a></li>
+      <li><a class="btn btn-primary mag" href="#agenda" style="height:40px;padding:0 18px;font-size:14px">Plan een kennismaking</a></li>
     </ul>
     <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#252a31" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
@@ -305,7 +311,7 @@ body.typing .cur,body.typing .ring{opacity:0!important}
     <h1 id="h1">Interim leiderschap dat het MKB <em>sneller en slimmer</em> laat draaien</h1>
     <p class="rv">Van strategie tot uitvoering: ik geef MKB-bedrijven grip op hun koers, operatie, financiën en data. Ik breng structuur in processen, maak resultaten zichtbaar en automatiseer wat sneller en slimmer kan.</p>
     <div class="ctas rv">
-      <a class="btn btn-primary mag" href="#contact">Plan een kennismaking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-primary mag" href="#agenda">Plan een kennismaking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="btn btn-ghost mag" href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Stuur een e-mail</a>
     </div>
     <a href="#expertise" class="scrollhint rv"><span class="downmark"><svg viewBox="0 0 150 140"><use href="#mark"/></svg></span>Scroll</a>
@@ -399,8 +405,8 @@ body.typing .cur,body.typing .ring{opacity:0!important}
       <div class="cta rv"><svg class="wm" viewBox="0 0 150 140"><use href="#mark"/></svg>
         <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#fff" stroke-width="1.4" style="position:relative;z-index:1"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
         <h3 style="position:relative;z-index:1">Kennismakingsgesprek</h3>
-        <p style="position:relative;z-index:1">30 minuten, online of telefonisch. Stuur een korte mail en ik stel een paar momenten voor.</p>
-        <a class="btn mag" href="mailto:verstappe.j.v@gmail.com?subject=Kennismakingsgesprek">Plan een kennismaking</a>
+        <p style="position:relative;z-index:1">30 minuten, online of telefonisch. Kies hieronder direct een moment dat u schikt.</p>
+        <a class="btn mag" href="https://cal.com/joep-verstappe-oqfhpw/30min" target="_blank" rel="noopener">Open mijn agenda ↗</a>
         <div class="mail"><small>Liever direct mailen?</small>verstappe.j.v@gmail.com</div>
       </div>
       <form class="card rv" id="form" style="padding:34px">
@@ -411,6 +417,11 @@ body.typing .cur,body.typing .ring{opacity:0!important}
         <label class="full">Bericht<textarea rows="5" required name="bericht"></textarea></label>
         <div class="full" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap"><span class="note" id="fnote">Bij verzenden opent uw e-mailprogramma met het bericht klaar.</span><button class="btn btn-primary mag" style="border:0;font:inherit;font-weight:500">Verstuur bericht</button></div>
       </form>
+    </div>
+    <div class="agenda rv" id="agenda">
+      <div class="agenda-head"><div><span class="tag">Direct inplannen</span><h3>Kies een moment voor een kennismaking</h3><p>Uw afspraak staat direct in mijn agenda en u ontvangt automatisch een bevestiging.</p></div><a class="btn btn-ghost mag" href="https://cal.com/joep-verstappe-oqfhpw/30min" target="_blank" rel="noopener">Openen in nieuw venster ↗</a></div>
+      <div id="cal-inline" data-lenis-prevent></div>
+      <noscript><a href="https://cal.com/joep-verstappe-oqfhpw/30min">Plan een kennismaking via Cal.com</a></noscript>
     </div>
   </div>
 </section>
@@ -451,9 +462,15 @@ addEventListener('scroll',onScroll,{passive:true});onScroll();
 document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
 var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
 if(fine&&!reduce){document.querySelectorAll('.mag').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();var x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform='translate('+x*.25+'px,'+y*.35+'px)'});b.addEventListener('pointerleave',function(){b.style.transition='transform .6s cubic-bezier(.22,1,.36,1)';b.style.transform='';setTimeout(function(){b.style.transition=''},600)})})}
-if(fine){var cur=document.getElementById('cur'),ring=document.getElementById('ring'),mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY;cur.style.transform='translate3d('+mx+'px,'+my+'px,0)'});(function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform='translate3d('+rx+'px,'+ry+'px,0)';requestAnimationFrame(loop)})();document.querySelectorAll('#form input,#form textarea').forEach(function(f){f.addEventListener('pointerenter',function(){document.body.classList.add('typing')});f.addEventListener('pointerleave',function(){document.body.classList.remove('typing')})});document.querySelectorAll('a,button,.card:not(form),.logo').forEach(function(el){el.addEventListener('pointerenter',function(){ring.classList.add('big')});el.addEventListener('pointerleave',function(){ring.classList.remove('big')})});document.addEventListener('pointerleave',function(){cur.style.opacity=ring.style.opacity=0});document.addEventListener('pointerenter',function(){cur.style.opacity=ring.style.opacity=1})}
+if(fine){var cur=document.getElementById('cur'),ring=document.getElementById('ring'),mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY;cur.style.transform='translate3d('+mx+'px,'+my+'px,0)'});(function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform='translate3d('+rx+'px,'+ry+'px,0)';requestAnimationFrame(loop)})();document.querySelectorAll('#form input,#form textarea,#cal-inline').forEach(function(f){f.addEventListener('pointerenter',function(){document.body.classList.add('typing')});f.addEventListener('pointerleave',function(){document.body.classList.remove('typing')})});document.querySelectorAll('a,button,.card:not(form),.logo').forEach(function(el){el.addEventListener('pointerenter',function(){ring.classList.add('big')});el.addEventListener('pointerleave',function(){ring.classList.remove('big')})});document.addEventListener('pointerleave',function(){cur.style.opacity=ring.style.opacity=0});document.addEventListener('pointerenter',function(){cur.style.opacity=ring.style.opacity=1})}
 document.getElementById('form').addEventListener('submit',function(e){e.preventDefault();var f=e.target;var g=function(n){return (f.elements[n].value||'').trim()};var sub='Kennismaking: '+g('naam')+(g('bedrijf')?' ('+g('bedrijf')+')':'');var body=['Naam: '+g('naam'),'Bedrijf: '+g('bedrijf'),'E-mail: '+g('email'),'Telefoon: '+(g('tel')||'-'),'','Bericht:',g('bericht')].join('\r\n');window.location.href='mailto:verstappe.j.v@gmail.com?subject='+encodeURIComponent(sub)+'&body='+encodeURIComponent(body);document.getElementById('fnote').textContent='Uw e-mailprogramma is geopend. Controleer het bericht en klik op verzenden.'});
 })();
+</script>
+<script>
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "30min", {origin:"https://cal.com"});
+Cal.ns["30min"]("inline", {elementOrSelector:"#cal-inline", config:{layout:"month_view"}, calLink:"joep-verstappe-oqfhpw/30min"});
+Cal.ns["30min"]("ui", {cssVarsPerTheme:{light:{"cal-brand":"#1E3A5F"},dark:{"cal-brand":"#38BDF8"}}, hideEventTypeDetails:false, layout:"month_view"});
 </script>
 </body>
 </html>
