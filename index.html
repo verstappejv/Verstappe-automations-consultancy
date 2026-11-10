@@ -164,10 +164,15 @@ header.hide{transform:translateY(-100%)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:56px;position:relative}
 .steps:before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;background:var(--line)}
 .steps .prog{position:absolute;left:0;top:21px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--sky),var(--navy));width:0;transition:width 1.2s var(--ease)}
-.endpt{position:absolute;right:-2px;top:22px;width:30px;height:30px;margin-top:-15px;border-radius:50%;background:#fff;border:1.5px solid var(--line);display:grid;place-items:center;transition:background .6s var(--ease),border-color .6s,transform .6s var(--ease),box-shadow .6s}
-.endpt svg{width:16px;height:16px;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .6s var(--ease) .3s}
-.endpt.done{background:var(--navy);border-color:var(--navy);transform:scale(1.08);box-shadow:0 0 0 8px rgba(56,189,248,.15)}
-.endpt.done svg{stroke-dashoffset:0}
+.endpt{position:absolute;right:-30px;top:22px;width:72px;height:67px;margin-top:-33.5px}
+.endpt svg{width:100%;height:100%;overflow:visible}
+.endpt path[pathLength]{stroke-dasharray:100;stroke-dashoffset:100}
+.endpt .eh{opacity:0;transform:translateX(-10px) scale(.6);transform-box:fill-box;transform-origin:left center;transition:opacity .4s, transform .6s cubic-bezier(.3,1.6,.5,1)}
+.endpt.done .e2{transition:stroke-dashoffset .5s var(--ease)}
+.endpt.done .e1,.endpt.done .e3{transition:stroke-dashoffset .8s var(--ease) .35s}
+.endpt.done .e4{transition:stroke-dashoffset .35s var(--ease) 1.05s}
+.endpt.done path[pathLength]{stroke-dashoffset:0}
+.endpt.done .eh{opacity:1;transform:none;transition-delay:1.3s}
 .arrows{position:absolute;left:0;right:0;top:12px;height:20px;pointer-events:none}
 .arrows svg{position:absolute;width:30px;height:28px;margin-top:-3px;transform:translateX(-50%);background:#fff;padding:0 3px;box-sizing:content-box;transition:transform .5s var(--ease)}
 .arrows svg:nth-child(1){left:calc(12.5% + 18px)}.arrows svg:nth-child(2){left:calc(37.5% + 25px)}.arrows svg:nth-child(3){left:calc(62.5% + 32px)}
@@ -323,7 +328,7 @@ footer ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Werkwijze</p>
     <h2 class="rv">Van eerste gesprek tot een sterke overdracht</h2>
-    <div class="steps" id="steps"><div class="prog"></div><div class="endpt" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 12.5 4 4 8-9"/></svg></div><div class="arrows" aria-hidden="true"><svg viewBox="0 0 150 140"><use href="#mark"/></svg><svg viewBox="0 0 150 140"><use href="#mark"/></svg><svg viewBox="0 0 150 140"><use href="#mark"/></svg></div>
+    <div class="steps" id="steps"><div class="prog"></div><div class="endpt" aria-hidden="true"><svg viewBox="0 0 150 140"><g fill="none" stroke-linecap="round" stroke-width="10"><path class="e1" pathLength="100" d="M14 34 C 48 34, 54 70, 82 70" stroke="#38BDF8"/><path class="e2" pathLength="100" d="M14 70 L 82 70" stroke="#0284C7"/><path class="e3" pathLength="100" d="M14 106 C 48 106, 54 70, 82 70" stroke="#1E3A5F"/><path class="e4" pathLength="100" d="M82 70 L 108 70" stroke="#1E3A5F"/></g><path class="eh" d="M104 52 L 130 70 L 104 88 Z" fill="#1E3A5F"/></svg></div><div class="arrows" aria-hidden="true"><svg viewBox="0 0 150 140"><use href="#mark"/></svg><svg viewBox="0 0 150 140"><use href="#mark"/></svg><svg viewBox="0 0 150 140"><use href="#mark"/></svg></div>
       <div class="step s1 rv"><div class="n">1</div><h3>Kennismaking</h3><p>In een vrijblijvend gesprek bespreken we de situatie en de opgave.</p></div>
       <div class="step s2 rv"><div class="n">2</div><h3>Analyse</h3><p>In de eerste weken breng ik organisatie, processen en knelpunten in kaart.</p></div>
       <div class="step s3 rv"><div class="n">3</div><h3>Uitvoering</h3><p>Ik stuur op concrete doelen, verbeter processen en automatiseer waar het loont.</p></div>
@@ -421,7 +426,7 @@ document.querySelectorAll('.rv').forEach(function(el){var sib=Array.prototype.in
 (function(){var st=document.getElementById('steps'),steps=[].slice.call(st.querySelectorAll('.step')),arrows=[].slice.call(st.querySelectorAll('.arrows svg')),prog=st.querySelector('.prog'),timers=[];
 function T(fn,ms){timers.push(setTimeout(fn,ms))}
 function finish(){st.querySelector('.endpt').classList.add('done');steps.forEach(function(sp){sp.classList.add('on','done')});arrows.forEach(function(a){a.classList.add('go')});prog.style.width='100%'}
-function play(){var t=400;steps.forEach(function(sp,i){var words=sp.querySelector('p').textContent.trim().split(/\s+/).length;T(function(){if(i>0){steps[i-1].classList.remove('now');steps[i-1].classList.add('done');arrows[i-1].classList.add('go')}sp.classList.add('on','now');prog.style.width='calc('+(i*25)+'% + '+(i*7+22)+'px)'},t);t+=1000+words*170});T(function(){prog.style.width='100%';steps[3].classList.remove('now');steps[3].classList.add('done')},t);T(function(){st.querySelector('.endpt').classList.add('done')},t+1100)}
+function play(){var t=400;steps.forEach(function(sp,i){var words=sp.querySelector('p').textContent.trim().split(/\s+/).length;T(function(){if(i>0){steps[i-1].classList.remove('now');steps[i-1].classList.add('done');arrows[i-1].classList.add('go')}sp.classList.add('on','now');prog.style.width='calc('+(i*25)+'% + '+(i*7+22)+'px)'},t);t+=1000+words*170});T(function(){prog.style.width='100%';steps[3].classList.remove('now');steps[3].classList.add('done')},t);T(function(){st.querySelector('.endpt').classList.add('done')},t+900)}
 if(reduce){finish();return}
 st.classList.add('story');
 new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){play();o.disconnect()}})},{threshold:.55}).observe(st);
