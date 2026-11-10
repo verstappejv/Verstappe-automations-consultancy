@@ -174,12 +174,9 @@ header.hide{transform:translateY(-100%)}
 .steps.story .step.on{opacity:1}
 .step.on .n{animation:pop 1.2s var(--ease) both}
 .step.now h3{color:var(--blue)}
-.step p .wd{color:#b9c2cc;transition:color .35s}
-.step p .wd.lit{color:var(--ink)}
-.step.done p .wd{color:var(--muted)}
-.replay{margin-top:34px;display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:13px;font-weight:500;color:var(--blue);background:none;border:1px solid #cfe6f6;border-radius:999px;padding:8px 14px;opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s var(--ease)}
-.replay.show{opacity:1;transform:none}
-.replay svg{width:14px;height:14px}
+.step.now p{color:var(--ink)}
+.step p{transition:color .6s}
+
 @keyframes pop{0%{transform:scale(1)}35%{transform:scale(1.18);background:var(--navy);color:#fff;box-shadow:0 0 0 10px rgba(56,189,248,.2)}100%{transform:scale(1);background:var(--navy);color:#fff;box-shadow:0 0 0 0 rgba(56,189,248,0)}}
 .step:hover h3{color:var(--blue)}
 .step h3{transition:color .3s}
@@ -328,7 +325,6 @@ footer ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
       <div class="step s3 rv"><div class="n">3</div><h3>Uitvoering</h3><p>Ik stuur op concrete doelen, verbeter processen en automatiseer waar het loont.</p></div>
       <div class="step s4 rv"><div class="n">4</div><h3>Overdracht</h3><p>Ik borg de resultaten en draag over aan een vaste opvolger of het team.</p></div>
     </div>
-    <button class="replay" id="replay" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>Opnieuw afspelen</button>
   </div>
 </section>
 
@@ -418,17 +414,13 @@ h1.querySelectorAll('.w > span').forEach(function(s,i){s.style.transitionDelay=(
 requestAnimationFrame(function(){setTimeout(function(){document.querySelector('.hero').classList.add('in')},60)});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.rv').forEach(function(el){var sib=Array.prototype.indexOf.call(el.parentNode.children,el);if(el.closest('.cards')||el.closest('.steps'))el.style.transitionDelay=(sib%3)*90+'ms';io.observe(el)});
-(function(){var st=document.getElementById('steps'),steps=[].slice.call(st.querySelectorAll('.step')),arrows=[].slice.call(st.querySelectorAll('.arrows svg')),prog=st.querySelector('.prog'),rb=document.getElementById('replay'),timers=[],ran=false;
-steps.forEach(function(sp){var p=sp.querySelector('p');p.innerHTML=p.textContent.trim().split(/\s+/).map(function(w){return '<span class="wd">'+w+'</span>'}).join(' ')});
-function clear(){timers.forEach(clearTimeout);timers=[]}
+(function(){var st=document.getElementById('steps'),steps=[].slice.call(st.querySelectorAll('.step')),arrows=[].slice.call(st.querySelectorAll('.arrows svg')),prog=st.querySelector('.prog'),timers=[];
 function T(fn,ms){timers.push(setTimeout(fn,ms))}
-function reset(){clear();st.classList.add('story');steps.forEach(function(sp){sp.classList.remove('on','now','done');sp.querySelectorAll('.wd').forEach(function(w){w.classList.remove('lit')})});arrows.forEach(function(a){a.classList.remove('go')});prog.style.width='0';rb.classList.remove('show')}
-function finish(){steps.forEach(function(sp){sp.classList.add('on','done');sp.classList.remove('now');sp.querySelectorAll('.wd').forEach(function(w){w.classList.add('lit')})});arrows.forEach(function(a){a.classList.add('go')});prog.style.width='100%'}
-function play(){reset();var t=300;steps.forEach(function(sp,i){var words=[].slice.call(sp.querySelectorAll('.wd'));T(function(){if(i>0){steps[i-1].classList.remove('now');steps[i-1].classList.add('done');arrows[i-1].classList.add('go')}sp.classList.add('on','now');prog.style.width='calc('+(i*25)+'% + '+(i*7+22)+'px)'},t);t+=650;words.forEach(function(w,k){T(function(){w.classList.add('lit')},t+k*230)});t+=words.length*230+900});T(function(){prog.style.width='100%';steps[3].classList.remove('now');steps[3].classList.add('done');rb.classList.add('show')},t)}
-rb.addEventListener('click',play);
+function finish(){steps.forEach(function(sp){sp.classList.add('on','done')});arrows.forEach(function(a){a.classList.add('go')});prog.style.width='100%'}
+function play(){var t=400;steps.forEach(function(sp,i){var words=sp.querySelector('p').textContent.trim().split(/\s+/).length;T(function(){if(i>0){steps[i-1].classList.remove('now');steps[i-1].classList.add('done');arrows[i-1].classList.add('go')}sp.classList.add('on','now');prog.style.width='calc('+(i*25)+'% + '+(i*7+22)+'px)'},t);t+=1600+words*260});T(function(){prog.style.width='100%';steps[3].classList.remove('now');steps[3].classList.add('done')},t)}
 if(reduce){finish();return}
 st.classList.add('story');
-new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting&&!ran){ran=true;play();o.disconnect()}})},{threshold:.55}).observe(st);
+new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){play();o.disconnect()}})},{threshold:.55}).observe(st);
 })();
 var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
 var hdr=document.getElementById('hdr'),last=0,orb=document.getElementById('orb'),photo=document.getElementById('photo');
