@@ -174,10 +174,16 @@ header.hide{transform:translateY(-100%)}
 .endpt.done path[pathLength]{stroke-dashoffset:0}
 .endpt.done .eh{opacity:1;transform:none;transition-delay:1.3s}
 .arrows{position:absolute;left:0;right:0;top:12px;height:20px;pointer-events:none}
-.arrows svg{position:absolute;width:30px;height:28px;margin-top:-3px;transform:translateX(-50%);background:#fff;padding:0 3px;box-sizing:content-box;transition:transform .5s var(--ease)}
+.arrows svg{position:absolute;width:40px;height:37px;margin-top:-8px;transform:translateX(-50%);background:transparent;padding:0 4px;box-sizing:content-box;transition:background .2s}
+.arrows svg.go{background:#fff}
 .arrows svg:nth-child(1){left:calc(12.5% + 18px)}.arrows svg:nth-child(2){left:calc(37.5% + 25px)}.arrows svg:nth-child(3){left:calc(62.5% + 32px)}
-.arrows svg.go{transform:translateX(calc(-50% + 12px))}
-.arrows svg{transition-duration:.9s}
+.arrows path[pathLength]{stroke-dasharray:100;stroke-dashoffset:100}
+.arrows .eh{opacity:0;transform:translateX(-10px) scale(.6);transform-box:fill-box;transform-origin:left center;transition:opacity .4s,transform .6s cubic-bezier(.3,1.6,.5,1)}
+.arrows svg.go .e2{transition:stroke-dashoffset .45s var(--ease)}
+.arrows svg.go .e1,.arrows svg.go .e3{transition:stroke-dashoffset .75s var(--ease) .3s}
+.arrows svg.go .e4{transition:stroke-dashoffset .3s var(--ease) .95s}
+.arrows svg.go path[pathLength]{stroke-dashoffset:0}
+.arrows svg.go .eh{opacity:1;transform:none;transition-delay:1.15s}
 .step .n{transition:background .35s var(--ease),color .35s,transform .45s var(--ease),box-shadow .45s;}
 .steps.story .step{opacity:.38;transition:opacity .8s var(--ease)}
 .steps.story .step.on{opacity:1}
@@ -328,7 +334,7 @@ footer ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap}
   <div class="wrap">
     <p class="eyebrow rv"><svg class="em" viewBox="0 0 150 140"><use href="#mark"/></svg>Werkwijze</p>
     <h2 class="rv">Van eerste gesprek tot een sterke overdracht</h2>
-    <div class="steps" id="steps"><div class="prog"></div><div class="endpt" aria-hidden="true"><svg viewBox="0 0 150 140"><g fill="none" stroke-linecap="round" stroke-width="10"><path class="e1" pathLength="100" d="M14 34 C 48 34, 54 70, 82 70" stroke="#38BDF8"/><path class="e2" pathLength="100" d="M14 70 L 82 70" stroke="#0284C7"/><path class="e3" pathLength="100" d="M14 106 C 48 106, 54 70, 82 70" stroke="#1E3A5F"/><path class="e4" pathLength="100" d="M82 70 L 108 70" stroke="#1E3A5F"/></g><path class="eh" d="M104 52 L 130 70 L 104 88 Z" fill="#1E3A5F"/></svg></div><div class="arrows" aria-hidden="true"><svg viewBox="0 0 150 140"><use href="#mark"/></svg><svg viewBox="0 0 150 140"><use href="#mark"/></svg><svg viewBox="0 0 150 140"><use href="#mark"/></svg></div>
+    <div class="steps" id="steps"><div class="prog"></div><div class="endpt" aria-hidden="true"><svg viewBox="0 0 150 140"><g fill="none" stroke-linecap="round" stroke-width="10"><path class="e1" pathLength="100" d="M14 34 C 48 34, 54 70, 82 70" stroke="#38BDF8"/><path class="e2" pathLength="100" d="M14 70 L 82 70" stroke="#0284C7"/><path class="e3" pathLength="100" d="M14 106 C 48 106, 54 70, 82 70" stroke="#1E3A5F"/><path class="e4" pathLength="100" d="M82 70 L 108 70" stroke="#1E3A5F"/></g><path class="eh" d="M104 52 L 130 70 L 104 88 Z" fill="#1E3A5F"/></svg></div><div class="arrows" aria-hidden="true"><svg viewBox="0 0 150 140"><g fill="none" stroke-linecap="round" stroke-width="10"><path class="e1" pathLength="100" d="M14 34 C 48 34, 54 70, 82 70" stroke="#38BDF8"/><path class="e2" pathLength="100" d="M14 70 L 82 70" stroke="#0284C7"/><path class="e3" pathLength="100" d="M14 106 C 48 106, 54 70, 82 70" stroke="#1E3A5F"/><path class="e4" pathLength="100" d="M82 70 L 108 70" stroke="#1E3A5F"/></g><path class="eh" d="M104 52 L 130 70 L 104 88 Z" fill="#1E3A5F"/></svg><svg viewBox="0 0 150 140"><g fill="none" stroke-linecap="round" stroke-width="10"><path class="e1" pathLength="100" d="M14 34 C 48 34, 54 70, 82 70" stroke="#38BDF8"/><path class="e2" pathLength="100" d="M14 70 L 82 70" stroke="#0284C7"/><path class="e3" pathLength="100" d="M14 106 C 48 106, 54 70, 82 70" stroke="#1E3A5F"/><path class="e4" pathLength="100" d="M82 70 L 108 70" stroke="#1E3A5F"/></g><path class="eh" d="M104 52 L 130 70 L 104 88 Z" fill="#1E3A5F"/></svg><svg viewBox="0 0 150 140"><g fill="none" stroke-linecap="round" stroke-width="10"><path class="e1" pathLength="100" d="M14 34 C 48 34, 54 70, 82 70" stroke="#38BDF8"/><path class="e2" pathLength="100" d="M14 70 L 82 70" stroke="#0284C7"/><path class="e3" pathLength="100" d="M14 106 C 48 106, 54 70, 82 70" stroke="#1E3A5F"/><path class="e4" pathLength="100" d="M82 70 L 108 70" stroke="#1E3A5F"/></g><path class="eh" d="M104 52 L 130 70 L 104 88 Z" fill="#1E3A5F"/></svg></div>
       <div class="step s1 rv"><div class="n">1</div><h3>Kennismaking</h3><p>In een vrijblijvend gesprek bespreken we de situatie en de opgave.</p></div>
       <div class="step s2 rv"><div class="n">2</div><h3>Analyse</h3><p>In de eerste weken breng ik organisatie, processen en knelpunten in kaart.</p></div>
       <div class="step s3 rv"><div class="n">3</div><h3>Uitvoering</h3><p>Ik stuur op concrete doelen, verbeter processen en automatiseer waar het loont.</p></div>
