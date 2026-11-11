@@ -89,6 +89,7 @@ miss=[a for a,b in T if a not in s]
 if miss:
     print('MISSING:'); [print(' ',m[:90]) for m in miss]
 for a,b in T: s=s.replace(a,b)
+s=s.replace('https://verstappe.com/img/og.png?v=2','https://verstappe.com/img/og-en.png?v=2')
 # relative paths
 s=s.replace('src="img/','src="../img/').replace('href="img/','href="../img/')
 open(root+'en/index.html','w').write(s)
