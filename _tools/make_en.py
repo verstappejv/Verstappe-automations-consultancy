@@ -18,7 +18,6 @@ T=[
 ('</svg></span>Kijk verder</a>','</svg></span>Explore</a>'),
 ('>Plan een kennismaking<','>Book an intro call<'),
 ('>Plan een kennismaking <svg','>Book an intro call <svg'),
-('>Oplossingen voor het MKB<','>Solutions for SMEs<'),
 ('Interim leiderschap, versterkt met','Interim leadership, strengthened by'),
 ('>slimme automatisering<','>smart automation<'),
 ('Van strategie tot uitvoering: ik geef MKB-bedrijven grip op hun koers, operatie, financiën en data. Ik breng structuur in processen, maak resultaten zichtbaar en automatiseer wat sneller en slimmer kan.','From strategy to execution: I help small and mid-sized businesses get a grip on their direction, operations, finances and data. I bring structure to processes, make results visible and automate what can be done faster and smarter.'),
