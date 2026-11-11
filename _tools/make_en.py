@@ -15,6 +15,7 @@ T=[
 ('<a class="l" href="#werkwijze">Werkwijze</a>','<a class="l" href="#werkwijze">Approach</a>'),
 ('<a class="l" href="#samenwerkingen">Samenwerkingen</a>','<a class="l" href="#samenwerkingen">Partners</a>'),
 ('<a class="l" href="#over-mij">Over mij</a>','<a class="l" href="#over-mij">About</a>'),
+('</svg></span>Kijk verder</a>','</svg></span>Explore</a>'),
 ('>Plan een kennismaking<','>Book an intro call<'),
 ('>Plan een kennismaking <svg','>Book an intro call <svg'),
 ('>Oplossingen voor het MKB<','>Solutions for SMEs<'),
