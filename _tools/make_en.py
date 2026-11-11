@@ -39,7 +39,7 @@ T=[
 ('<h3>Analyse</h3><p>In de eerste weken breng ik organisatie, processen en knelpunten in kaart.</p>','<h3>Analysis</h3><p>In the first weeks I map out the organisation, processes and bottlenecks.</p>'),
 ('<h3>Uitvoering</h3><p>Ik stuur op concrete doelen, verbeter processen en automatiseer waar het loont.</p>','<h3>Execution</h3><p>I steer on concrete goals, improve processes and automate where it pays off.</p>'),
 ('<h3>Overdracht</h3><p>Ik borg de resultaten en draag over aan een vaste opvolger of het team.</p>','<h3>Handover</h3><p>I embed the results and hand over to a permanent successor or the team.</p>'),
-('<h3>Betrokkenheid</h3><p>Ook na de overdracht blijf ik betrokken en bereikbaar, voor een blijvend goede samenwerking.</p>','<h3>Commitment</h3><p>Even after the handover I stay involved and available, for a lasting, strong partnership.</p>'),
+('<h3>Betrokkenheid</h3><p>Na de overdracht houden we contact. Is er later behoefte aan een evaluatie of vervolgopdracht, dan sluit ik snel weer aan.</p>','<h3>Commitment</h3><p>After the handover we stay in touch. Should you later need an evaluation or a follow-up assignment, I can quickly step back in.</p>'),
 ('>Partners &amp; opdrachtgevers<','>Partners &amp; clients<'),
 ('<h2 class="rv">Samenwerkingen</h2>','<h2 class="rv">Collaborations</h2>'),
 ('</svg>Over mij</p>','</svg>About me</p>'),
