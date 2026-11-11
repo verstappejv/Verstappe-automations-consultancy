@@ -52,6 +52,20 @@ header.hide{transform:translateY(-100%)}
 .nav ul a.lang:hover{border-color:var(--navy)}
 .burger{display:none;background:none;border:0;width:40px;height:40px}
 .hero{position:relative;padding:170px 0 110px;overflow:hidden}
+.hero .wrap{position:relative}
+.hero-mark{position:absolute;right:24px;top:50%;width:clamp(260px,27vw,400px);transform:translateY(-58%);pointer-events:none}
+.hero-mark svg{width:100%;height:auto;display:block;overflow:visible;animation:hmfloat 7s ease-in-out 3s infinite}
+.hero-mark .ln{stroke-dasharray:100;stroke-dashoffset:100;animation:hmdraw 1.3s cubic-bezier(.65,0,.35,1) forwards}
+.hero-mark .l2{animation-delay:.5s}.hero-mark .l1,.hero-mark .l3{animation-delay:.8s;animation-duration:1.5s}.hero-mark .l4{animation-delay:2.05s;animation-duration:.45s}
+.hero-mark .hd{opacity:0;animation:hmfade .5s ease-out 2.35s forwards}
+.hero-mark .pl path{stroke-dasharray:14 186;stroke-dashoffset:14;opacity:0;animation:flow 2.6s linear 3s infinite,hmfade .6s ease-out 3s forwards}
+.hero-mark .pl path:nth-child(2){animation-delay:2.15s,3s}.hero-mark .pl path:nth-child(3){animation-delay:1.3s,3s}
+@keyframes hmdraw{to{stroke-dashoffset:0}}
+@keyframes hmfade{to{opacity:1}}
+@keyframes hmfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media (max-width:1180px){.hero-mark{display:none}}
+@media (prefers-reduced-motion:reduce){.hero-mark .ln{stroke-dashoffset:0;animation:none}.hero-mark .hd{opacity:1;animation:none}.hero-mark .pl{display:none}.hero-mark svg{animation:none}}
+
 .hero .orb{position:absolute;right:-220px;top:-180px;width:760px;height:760px;border-radius:50%;background:linear-gradient(135deg,#BFE8FA,#38BDF8 55%,#0284C7);opacity:.16;filter:blur(2px)}
 .hero .grid{position:absolute;inset:0;background-image:linear-gradient(to right,#eef2f6 1px,transparent 1px),linear-gradient(to bottom,#eef2f6 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 80% 70% at 50% 0%,#000 30%,transparent 75%)}
 .hero h1{position:relative;font-size:clamp(38px,6.2vw,72px);line-height:1.04;letter-spacing:-.035em;font-weight:600;max-width:900px;margin-top:22px}
@@ -341,6 +355,7 @@ body.typing .cur,body.typing .ring{opacity:0!important}
 <section class="hero" id="top">
   <div class="grid"></div>
   <div class="wrap">
+    <div class="hero-mark" aria-hidden="true"><svg viewBox="0 0 150 140"><g fill="none" stroke-linecap="round" stroke-width="10"><path class="ln l1" pathLength="100" d="M14 34 C 48 34, 54 70, 82 70" stroke="#38BDF8"/><path class="ln l2" pathLength="100" d="M14 70 L 82 70" stroke="#0284C7"/><path class="ln l3" pathLength="100" d="M14 106 C 48 106, 54 70, 82 70" stroke="#1E3A5F"/><path class="ln l4" pathLength="100" d="M82 70 L 108 70" stroke="#1E3A5F"/></g><path class="hd" d="M104 52 L 130 70 L 104 88 Z" fill="#1E3A5F"/><g class="pl" fill="none" stroke-linecap="round" stroke-width="4" stroke="#fff"><path pathLength="100" d="M14 34 C 48 34, 54 70, 82 70 L 108 70"/><path pathLength="100" d="M14 70 L 108 70"/><path pathLength="100" d="M14 106 C 48 106, 54 70, 82 70 L 108 70"/></g></svg></div>
     <h1 id="h1">Interim leiderschap, versterkt met <em>slimme automatisering</em></h1>
     <p class="rv">Van strategie tot uitvoering: ik geef MKB-bedrijven grip op hun koers, operatie, financiën en data. Ik breng structuur in processen, maak resultaten zichtbaar en automatiseer wat sneller en slimmer kan.</p>
     <div class="ctas rv">
