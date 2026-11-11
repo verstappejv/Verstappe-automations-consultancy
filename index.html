@@ -339,7 +339,7 @@ body.typing .cur,body.typing .ring{opacity:0!important}
 </header>
 
 <section class="hero" id="top">
-  <div class="grid"></div><div class="orb" id="orb"></div>
+  <div class="grid"></div>
   <div class="wrap">
     <h1 id="h1">Interim leiderschap, versterkt met <em>slimme automatisering</em></h1>
     <p class="rv">Van strategie tot uitvoering: ik geef MKB-bedrijven grip op hun koers, operatie, financiën en data. Ik breng structuur in processen, maak resultaten zichtbaar en automatiseer wat sneller en slimmer kan.</p>
@@ -477,7 +477,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
 new IntersectionObserver(function(es){es.forEach(function(e){document.getElementById('totop').classList.toggle('away',e.isIntersecting)})},{threshold:.05}).observe(document.getElementById('agenda'));
 var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
 var hdr=document.getElementById('hdr'),last=0,orb=document.getElementById('orb'),photo=document.getElementById('photo');
-function onScroll(){var y=window.scrollY;if(!reduce){var la=document.querySelector('.logo-anim');la.classList.add('flowing');clearTimeout(window.__lf);window.__lf=setTimeout(function(){la.classList.remove('flowing')},900)}var mx2=document.documentElement.scrollHeight-innerHeight;document.getElementById('pring').style.strokeDashoffset=170-170*Math.min(1,y/mx2);document.getElementById('totop').classList.toggle('show',y>innerHeight*.8);hdr.classList.toggle('scrolled',y>10);hdr.classList.toggle('hide',y>last&&y>400);last=y;if(!reduce){orb.style.transform='translate3d(0,'+(y*0.25)+'px,0)';var r=photo.getBoundingClientRect();var p=Math.max(-1,Math.min(1,(r.top+r.height/2-innerHeight/2)/innerHeight));photo.style.transform='translate3d(0,'+(p*-30)+'px,0)'}}
+function onScroll(){var y=window.scrollY;if(!reduce){var la=document.querySelector('.logo-anim');la.classList.add('flowing');clearTimeout(window.__lf);window.__lf=setTimeout(function(){la.classList.remove('flowing')},900)}var mx2=document.documentElement.scrollHeight-innerHeight;document.getElementById('pring').style.strokeDashoffset=170-170*Math.min(1,y/mx2);document.getElementById('totop').classList.toggle('show',y>innerHeight*.8);hdr.classList.toggle('scrolled',y>10);hdr.classList.toggle('hide',y>last&&y>400);last=y;if(!reduce){if(orb)orb.style.transform='translate3d(0,'+(y*0.25)+'px,0)';var r=photo.getBoundingClientRect();var p=Math.max(-1,Math.min(1,(r.top+r.height/2-innerHeight/2)/innerHeight));photo.style.transform='translate3d(0,'+(p*-30)+'px,0)'}}
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
 var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
