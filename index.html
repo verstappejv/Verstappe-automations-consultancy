@@ -9,6 +9,9 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://verstappe.com/">
 <link rel="canonical" href="https://verstappe.com/">
+<link rel="alternate" hreflang="nl" href="https://verstappe.com/">
+<link rel="alternate" hreflang="en" href="https://verstappe.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://verstappe.com/">
 <meta property="og:image" content="https://verstappe.com/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -44,6 +47,9 @@ header.hide{transform:translateY(-100%)}
 .nav ul a.l:after{content:"";position:absolute;left:0;bottom:-6px;height:1.5px;width:100%;background:var(--navy);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
 .nav ul a.l:hover{color:var(--ink)}
 .nav ul a.l:hover:after{transform:scaleX(1);transform-origin:left}
+.nav ul a.lang{font-weight:600;font-size:13px;letter-spacing:.06em;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+.nav ul a.lang:after{display:none}
+.nav ul a.lang:hover{border-color:var(--navy)}
 .burger{display:none;background:none;border:0;width:40px;height:40px}
 .hero{position:relative;padding:170px 0 110px;overflow:hidden}
 .hero .orb{position:absolute;right:-220px;top:-180px;width:760px;height:760px;border-radius:50%;background:linear-gradient(135deg,#BFE8FA,#38BDF8 55%,#0284C7);opacity:.16;filter:blur(2px)}
@@ -190,7 +196,8 @@ form.card label,form.card .full{position:relative;z-index:1}
 .bar h3{font-size:19px;font-weight:600}
 .bar p{color:rgba(255,255,255,.78);line-height:1.65;margin-top:8px;max-width:720px}
 .sub{font-size:15px;font-weight:600;margin-top:64px}
-.skills-wrap .sub{margin-top:72px}
+.skills-wrap{margin-top:52px}
+
 .skill{padding:24px}
 .skill .ico{width:40px;height:40px}
 .skill h3{margin-top:16px;font-size:16px}
@@ -323,6 +330,7 @@ body.typing .cur,body.typing .ring{opacity:0!important}
       <li><a class="l" href="#werkwijze">Werkwijze</a></li>
       <li><a class="l" href="#samenwerkingen">Samenwerkingen</a></li>
       <li><a class="l" href="#over-mij">Over mij</a></li>
+      <li><a class="l lang" href="/en/" hreflang="en" lang="en" title="English">EN</a></li>
       <li><a class="btn btn-primary mag" href="#agenda" style="height:40px;padding:0 18px;font-size:14px">Plan een kennismaking</a></li>
     </ul>
     <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#252a31" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
@@ -412,7 +420,6 @@ body.typing .cur,body.typing .ring{opacity:0!important}
     </div>
   </div>
   <div class="wrap skills-wrap">
-    <p class="sub rv">Kernvaardigheden</p>
     <div class="cards c3" style="margin-top:20px">
       <article class="card skill rv"><div class="ico si-code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path class="bl" d="M8 7l-5 5 5 5"/><path class="br" d="M16 7l5 5-5 5"/><path class="sl" d="M13.5 4l-3 16"/></svg></div><h3>Power Automate &amp; Google Apps Script</h3><p>Workflows en scripts die systemen aan elkaar koppelen en terugkerende taken automatisch afhandelen, in Microsoft 365 én Google Workspace.</p></article>
       <article class="card skill rv"><div class="ico si-cycle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g class="arr"><path d="M19.5 10A8 8 0 0 0 5.2 7.2"/><path d="M4.5 3.5v4h4"/><path d="M4.5 14a8 8 0 0 0 14.3 2.8"/><path d="M19.5 20.5v-4h-4"/></g><circle class="coin" cx="12" cy="12" r="2.6"/></svg></div><h3>Order-to-Cash</h3><p>Het hele traject van order en levering tot factuur en betaling: sneller, foutlozer en met minder openstaande posten.</p></article>
