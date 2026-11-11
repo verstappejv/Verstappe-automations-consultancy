@@ -199,25 +199,25 @@ form.card label,form.card .full{position:relative;z-index:1}
 .steps:before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;background:var(--line)}
 .steps .prog{position:absolute;left:0;top:21px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--sky),var(--navy));width:0;transition:width 1.2s var(--ease)}
 .endpt{position:absolute;right:-30px;top:22px;width:72px;height:67px;margin-top:-33.5px}
-.endpt svg{width:100%;height:100%;overflow:visible;will-change:transform}
+.endpt svg{width:100%;height:100%;overflow:visible}
 .endpt path[pathLength]{stroke-dasharray:100;stroke-dashoffset:100}
-.endpt .eh{opacity:0;transform:translate3d(-6px,0,0);transition:opacity .35s ease-out,transform .45s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
+.endpt .eh{opacity:0;transition:opacity .25s linear}
 .endpt.done .e2{transition:stroke-dashoffset .5s var(--ease)}
 .endpt.done .e1,.endpt.done .e3{transition:stroke-dashoffset .8s var(--ease) .35s}
 .endpt.done .e4{transition:stroke-dashoffset .35s var(--ease) 1.05s}
 .endpt.done path[pathLength]{stroke-dashoffset:0}
-.endpt.done .eh{opacity:1;transform:none;transition-delay:1.3s}
+.endpt.done .eh{opacity:1;transition-delay:1.35s}
 .arrows{position:absolute;left:0;right:0;top:12px;height:20px;pointer-events:none}
-.arrows svg{will-change:transform;position:absolute;width:40px;height:37px;margin-top:-8px;transform:translateX(-50%);background:transparent;padding:0 4px;box-sizing:content-box;transition:background .2s}
+.arrows svg{position:absolute;width:40px;height:37px;margin-top:-8px;transform:translateX(-50%);background:transparent;padding:0 4px;box-sizing:content-box;transition:background .2s}
 .arrows svg.go{background:#fff}
 .arrows svg:nth-child(1){left:calc(12.5% + 18px)}.arrows svg:nth-child(2){left:calc(37.5% + 25px)}.arrows svg:nth-child(3){left:calc(62.5% + 32px)}
 .arrows path[pathLength]{stroke-dasharray:100;stroke-dashoffset:100}
-.arrows .eh{opacity:0;transform:translate3d(-6px,0,0);transition:opacity .35s ease-out,transform .45s cubic-bezier(.22,1,.36,1);will-change:opacity,transform}
+.arrows .eh{opacity:0;transition:opacity .25s linear}
 .arrows svg.go .e2{transition:stroke-dashoffset .45s var(--ease)}
 .arrows svg.go .e1,.arrows svg.go .e3{transition:stroke-dashoffset .75s var(--ease) .3s}
 .arrows svg.go .e4{transition:stroke-dashoffset .3s var(--ease) .95s}
 .arrows svg.go path[pathLength]{stroke-dashoffset:0}
-.arrows svg.go .eh{opacity:1;transform:none;transition-delay:1.15s}
+.arrows svg.go .eh{opacity:1;transition-delay:1.2s}
 .step .n{transition:background .35s var(--ease),color .35s,transform .45s var(--ease),box-shadow .45s;}
 .steps.story .step{opacity:.38;transition:opacity .8s var(--ease)}
 .steps.story .step.on{opacity:1}
