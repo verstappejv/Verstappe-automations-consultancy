@@ -31,6 +31,7 @@ T=[
 ('>Data &amp; sturing<','>Data &amp; steering<'),
 ('Financiële analyses en heldere dashboards die laten zien waar het geld verdiend en verloren wordt, zodat de directie stuurt op feiten in plaats van onderbuikgevoel.','Financial analyses and clear dashboards that show where money is made and lost, so management steers on facts instead of gut feeling.'),
 ('>Leiderschap in verandering<','>Leadership through change<'),
+('<h3>Automatisering &amp; efficiency</h3>','<h3>Automation &amp; efficiency</h3>'),
 ('Tijdelijk aan het roer of als rechterhand van de directie bij groei, transitie of een leiderschapsvacuüm. Ik neem verantwoordelijkheid en draag sterker over.','Temporarily at the helm or as the right hand of management during growth, transition or a leadership gap. I take ownership and hand over a stronger organisation.'),
 ('Elke opdracht kijk ik waar handwerk, dubbel werk en wachttijd zitten. Met slimme automatisering en AI-integraties houden teams tijd over voor het werk dat er echt toe doet.','In every assignment I look for manual work, duplicate work and waiting time. With smart automation and AI integrations, teams free up time for the work that really matters.'),
 ('</svg>Werkwijze</p>','</svg>Approach</p>'),
