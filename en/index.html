@@ -26,7 +26,8 @@
 html{scroll-behavior:auto}
 body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+@media (min-width:1700px){.wrap{zoom:1.15}}@media (min-width:2000px){.wrap{zoom:1.35}}@media (min-width:2400px){.wrap{zoom:1.55}}@media (min-width:3000px){.wrap{zoom:1.9}}
 section{scroll-margin-top:80px}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
 .eyebrow .em{width:22px;height:20px;flex:none}
@@ -116,69 +117,34 @@ header.hide{transform:translateY(-100%)}
 @keyframes flow{from{stroke-dashoffset:14}to{stroke-dashoffset:-186}}
 @media (max-width:760px){.logo-anim{height:38px}}
 .ico svg *{transform-box:fill-box;transform-origin:center}
-.ai-target .dart{stroke-dasharray:14;stroke-dashoffset:14;opacity:0}
-.card:hover .ai-target .r3{animation:ring 1.4s var(--ease) both}
-.card:hover .ai-target .r2{animation:ring 1.4s var(--ease) .15s both}
-.card:hover .ai-target .r1{animation:ring 1.4s var(--ease) .3s both}
-.card:hover .ai-target .dart{animation:dart 1.4s var(--ease) .35s forwards}
+.ai-target .dart{stroke-dasharray:14;stroke-dashoffset:14;opacity:0}.card:hover .ai-target .r3,.card.act .ai-target .r3{animation:ring 1.4s var(--ease) both}.card:hover .ai-target .r2,.card.act .ai-target .r2{animation:ring 1.4s var(--ease) .15s both}.card:hover .ai-target .r1,.card.act .ai-target .r1{animation:ring 1.4s var(--ease) .3s both}.card:hover .ai-target .dart,.card.act .ai-target .dart{animation:dart 1.4s var(--ease) .35s forwards}
 @keyframes ring{0%,100%{transform:scale(1)}40%{transform:scale(1.18)}}
 @keyframes dart{0%{opacity:1;stroke-dashoffset:14}60%,100%{opacity:1;stroke-dashoffset:0}}
-.ai-flow .ln{stroke-dasharray:20}
-.card:hover .ai-flow .ln{animation:draw20 1.6s var(--ease) both}
-.card:hover .ai-flow .b1{animation:nudge 1.6s var(--ease) both}
-.card:hover .ai-flow .b2{animation:nudge 1.6s var(--ease) .9s both}
+.ai-flow .ln{stroke-dasharray:20}.card:hover .ai-flow .ln,.card.act .ai-flow .ln{animation:draw20 1.6s var(--ease) both}.card:hover .ai-flow .b1,.card.act .ai-flow .b1{animation:nudge 1.6s var(--ease) both}.card:hover .ai-flow .b2,.card.act .ai-flow .b2{animation:nudge 1.6s var(--ease) .9s both}
 @keyframes draw20{0%{stroke-dashoffset:20}100%{stroke-dashoffset:0}}
-@keyframes nudge{0%,100%{transform:scale(1)}35%{transform:scale(1.25)}}
-.card:hover .ai-receipt .paper{animation:print 1.6s var(--ease) both}
-.card:hover .ai-receipt .l1,.card:hover .ai-receipt .l2,.card:hover .ai-receipt .l3{animation:type 1.6s var(--ease) both}
-.card:hover .ai-receipt .l2{animation-delay:.2s}.card:hover .ai-receipt .l3{animation-delay:.4s}
+@keyframes nudge{0%,100%{transform:scale(1)}35%{transform:scale(1.25)}}.card:hover .ai-receipt .paper,.card.act .ai-receipt .paper{animation:print 1.6s var(--ease) both}.card:hover .ai-receipt .l1,.card:hover .ai-receipt .l2,.card:hover .ai-receipt .l3,.card.act .ai-receipt .l1,.card.act .ai-receipt .l2,.card.act .ai-receipt .l3{animation:type 1.6s var(--ease) both}.card:hover .ai-receipt .l2,.card.act .ai-receipt .l2{animation-delay:.2s}.card:hover .ai-receipt .l3,.card.act .ai-receipt .l3{animation-delay:.4s}
 @keyframes print{0%,100%{transform:translateY(0)}30%{transform:translateY(-2px)}60%{transform:translateY(1px)}}
 @keyframes type{0%{transform:scaleX(0);transform-origin:left}60%,100%{transform:scaleX(1);transform-origin:left}}
-.ai-bars .k1,.ai-bars .k2,.ai-bars .k3{transform-origin:bottom}
-.card:hover .ai-bars .k1{animation:grow 1.4s var(--ease) both}
-.card:hover .ai-bars .k2{animation:grow 1.4s var(--ease) .15s both}
-.card:hover .ai-bars .k3{animation:grow 1.4s var(--ease) .3s both}
-@keyframes grow{0%{transform:scaleY(1)}30%{transform:scaleY(.15)}100%{transform:scaleY(1)}}
-.card:hover .ai-compass .needle{animation:spin 1.8s cubic-bezier(.3,1.5,.5,1) both}
-@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
-.card:hover .ai-bolt .bolt{animation:zap 1.2s var(--ease) both}
-@keyframes zap{0%{transform:scale(1);fill:transparent}20%{transform:scale(1.2) rotate(-6deg);fill:currentColor}40%{transform:scale(.95) rotate(4deg);fill:transparent}60%{transform:scale(1.1);fill:currentColor}100%{transform:scale(1);fill:transparent}}
-.card:hover .ico{background:#dff0fb}
-.card.feat:hover .ico{background:rgba(255,255,255,.14)}
-.ico{transition:background .4s}
-.card:hover .si-code .bl{animation:pushL 1.3s var(--ease) both}
-.card:hover .si-code .br{animation:pushR 1.3s var(--ease) both}
-.card:hover .si-code .sl{animation:tilt 1.3s var(--ease) both}
+.ai-bars .k1,.ai-bars .k2,.ai-bars .k3{transform-origin:bottom}.card:hover .ai-bars .k1,.card.act .ai-bars .k1{animation:grow 1.4s var(--ease) both}.card:hover .ai-bars .k2,.card.act .ai-bars .k2{animation:grow 1.4s var(--ease) .15s both}.card:hover .ai-bars .k3,.card.act .ai-bars .k3{animation:grow 1.4s var(--ease) .3s both}
+@keyframes grow{0%{transform:scaleY(1)}30%{transform:scaleY(.15)}100%{transform:scaleY(1)}}.card:hover .ai-compass .needle,.card.act .ai-compass .needle{animation:spin 1.8s cubic-bezier(.3,1.5,.5,1) both}
+@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.card:hover .ai-bolt .bolt,.card.act .ai-bolt .bolt{animation:zap 1.2s var(--ease) both}
+@keyframes zap{0%{transform:scale(1);fill:transparent}20%{transform:scale(1.2) rotate(-6deg);fill:currentColor}40%{transform:scale(.95) rotate(4deg);fill:transparent}60%{transform:scale(1.1);fill:currentColor}100%{transform:scale(1);fill:transparent}}.card:hover .ico,.card.act .ico{background:#dff0fb}.card.feat:hover .ico,.card.feat.act .ico{background:rgba(255,255,255,.14)}
+.ico{transition:background .4s}.card:hover .si-code .bl,.card.act .si-code .bl{animation:pushL 1.3s var(--ease) both}.card:hover .si-code .br,.card.act .si-code .br{animation:pushR 1.3s var(--ease) both}.card:hover .si-code .sl,.card.act .si-code .sl{animation:tilt 1.3s var(--ease) both}
 @keyframes pushL{0%,100%{transform:translateX(0)}40%{transform:translateX(-2.5px)}}
 @keyframes pushR{0%,100%{transform:translateX(0)}40%{transform:translateX(2.5px)}}
 @keyframes tilt{0%,100%{transform:rotate(0)}40%{transform:rotate(18deg)}}
-.si-cycle .arr{transform-origin:12px 12px;transform-box:view-box}
-.card:hover .si-cycle .arr{animation:spin 1.6s var(--ease) both}
-.card:hover .si-cycle .coin{animation:coin 1.6s var(--ease) both}
+.si-cycle .arr{transform-origin:12px 12px;transform-box:view-box}.card:hover .si-cycle .arr,.card.act .si-cycle .arr{animation:spin 1.6s var(--ease) both}.card:hover .si-cycle .coin,.card.act .si-cycle .coin{animation:coin 1.6s var(--ease) both}
 @keyframes coin{0%,100%{transform:scale(1);fill:transparent}50%{transform:scale(1.3);fill:currentColor}}
-.si-trend .tl{stroke-dasharray:30}
-.card:hover .si-trend .tl{animation:draw30 1.4s var(--ease) both}
-.card:hover .si-trend .th{animation:hop 1.4s var(--ease) .7s both}
+.si-trend .tl{stroke-dasharray:30}.card:hover .si-trend .tl,.card.act .si-trend .tl{animation:draw30 1.4s var(--ease) both}.card:hover .si-trend .th,.card.act .si-trend .th{animation:hop 1.4s var(--ease) .7s both}
 @keyframes draw30{0%{stroke-dashoffset:30}100%{stroke-dashoffset:0}}
 @keyframes hop{0%,100%{transform:translate(0,0)}40%{transform:translate(2px,-2px)}}
-.si-check .c1,.si-check .c2,.si-check .c3{stroke-dasharray:10}
-.card:hover .si-check .c1{animation:draw10 .7s var(--ease) both}
-.card:hover .si-check .c2{animation:draw10 .7s var(--ease) .35s both}
-.card:hover .si-check .c3{animation:draw10 .7s var(--ease) .7s both}
-.card:hover .si-check .r1{animation:slide .7s var(--ease) both}
-.card:hover .si-check .r2{animation:slide .7s var(--ease) .35s both}
-.card:hover .si-check .r3{animation:slide .7s var(--ease) .7s both}
+.si-check .c1,.si-check .c2,.si-check .c3{stroke-dasharray:10}.card:hover .si-check .c1,.card.act .si-check .c1{animation:draw10 .7s var(--ease) both}.card:hover .si-check .c2,.card.act .si-check .c2{animation:draw10 .7s var(--ease) .35s both}.card:hover .si-check .c3,.card.act .si-check .c3{animation:draw10 .7s var(--ease) .7s both}.card:hover .si-check .r1,.card.act .si-check .r1{animation:slide .7s var(--ease) both}.card:hover .si-check .r2,.card.act .si-check .r2{animation:slide .7s var(--ease) .35s both}.card:hover .si-check .r3,.card.act .si-check .r3{animation:slide .7s var(--ease) .7s both}
 @keyframes draw10{0%{stroke-dashoffset:10}100%{stroke-dashoffset:0}}
 @keyframes slide{0%,100%{transform:translateX(0)}50%{transform:translateX(2px)}}
 .si-gear .g1{transform-origin:9.5px 9.5px;transform-box:view-box}
-.si-gear .g2{transform-origin:17.6px 17.6px;transform-box:view-box}
-.card:hover .si-gear .g1{animation:turn 2s var(--ease) both}
-.card:hover .si-gear .g2{animation:turnb 2s var(--ease) both}
+.si-gear .g2{transform-origin:17.6px 17.6px;transform-box:view-box}.card:hover .si-gear .g1,.card.act .si-gear .g1{animation:turn 2s var(--ease) both}.card:hover .si-gear .g2,.card.act .si-gear .g2{animation:turnb 2s var(--ease) both}
 @keyframes turnb{0%{transform:rotate(0)}100%{transform:rotate(-240deg)}}
-@keyframes turn{0%{transform:rotate(0)}100%{transform:rotate(180deg)}}
-.card:hover .si-spark .s1{animation:twinkle 1.5s var(--ease) both}
-.card:hover .si-spark .s2{animation:twinkle 1.5s var(--ease) .25s both}
-.card:hover .si-spark .s3{animation:twinkle 1.5s var(--ease) .5s both}
+@keyframes turn{0%{transform:rotate(0)}100%{transform:rotate(180deg)}}.card:hover .si-spark .s1,.card.act .si-spark .s1{animation:twinkle 1.5s var(--ease) both}.card:hover .si-spark .s2,.card.act .si-spark .s2{animation:twinkle 1.5s var(--ease) .25s both}.card:hover .si-spark .s3,.card.act .si-spark .s3{animation:twinkle 1.5s var(--ease) .5s both}
 @keyframes twinkle{0%,100%{transform:scale(1) rotate(0);fill:transparent}40%{transform:scale(1.25) rotate(20deg);fill:currentColor}}
 .consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:90;max-width:560px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:0 20px 50px -20px rgba(30,58,95,.45);opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease)}
 .consent.show{opacity:1;transform:none;pointer-events:auto}
@@ -206,9 +172,7 @@ button.btn{border:0}button.btn-ghost{border:1px solid #cfd7e2}
 .cards{display:grid;gap:18px;margin-top:48px}
 .c2{grid-template-columns:repeat(2,1fr)}.c3{grid-template-columns:repeat(3,1fr)}
 .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s;position:relative;overflow:hidden}
-.card:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(56,189,248,.12),transparent 45%);opacity:0;transition:opacity .4s}
-.card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(30,58,95,.35);border-color:#bfd6ea}
-.card:hover:before{opacity:1}
+.card:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(56,189,248,.12),transparent 45%);opacity:0;transition:opacity .4s}.card:hover,.card.act{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(30,58,95,.35);border-color:#bfd6ea}.card:hover:before,.card.act:before{opacity:1}
 form.card label,form.card .full{position:relative;z-index:1}
 .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:#eaf5fd;color:var(--blue);border:1px solid #cfe6f6}
 .ico svg{width:22px;height:22px}
@@ -257,8 +221,7 @@ form.card label,form.card .full{position:relative;z-index:1}
 .step.now p{color:var(--ink)}
 .step p{transition:color .6s}
 
-@keyframes pop{0%{transform:scale(1)}35%{transform:scale(1.18);background:var(--navy);color:#fff;box-shadow:0 0 0 10px rgba(56,189,248,.2)}100%{transform:scale(1);background:var(--navy);color:#fff;box-shadow:0 0 0 0 rgba(56,189,248,0)}}
-.step:hover h3{color:var(--blue)}
+@keyframes pop{0%{transform:scale(1)}35%{transform:scale(1.18);background:var(--navy);color:#fff;box-shadow:0 0 0 10px rgba(56,189,248,.2)}100%{transform:scale(1);background:var(--navy);color:#fff;box-shadow:0 0 0 0 rgba(56,189,248,0)}}.step:hover h3,.step.act h3{color:var(--blue)}
 .step h3{transition:color .3s}
 .step .n{position:relative;width:44px;height:44px;border-radius:50%;border:1px solid var(--navy);background:#fff;display:grid;place-items:center;font-weight:600;color:var(--navy);font-size:14px}
 .step h3{font-size:18px;font-weight:600;margin-top:22px}
@@ -267,8 +230,7 @@ form.card label,form.card .full{position:relative;z-index:1}
 .track{display:flex;width:max-content;animation:scroll 32s linear infinite}
 .marquee:hover .track{animation-play-state:paused}
 .logo{width:220px;height:120px;display:grid;place-items:center;border-right:1px solid var(--line)}
-.logo img{max-height:56px;max-width:70%;border-radius:8px;filter:grayscale(1);opacity:.7;transition:filter .5s,opacity .5s,transform .5s var(--ease)}
-.logo:hover img{filter:none;opacity:1;transform:scale(1.06)}
+.logo img{max-height:56px;max-width:70%;border-radius:8px;filter:grayscale(1);opacity:.7;transition:filter .5s,opacity .5s,transform .5s var(--ease)}.logo:hover img,.marquee.act .logo img{filter:none;opacity:1;transform:scale(1.06)}
 @keyframes scroll{to{transform:translateX(-50%)}}
 .about{position:relative;overflow:hidden}
 .agrid{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center}
@@ -288,11 +250,9 @@ form.card label,form.card .full{position:relative;z-index:1}
 .practice{margin-top:22px}
 .plabel{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
-.pcase{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;transition:transform .4s var(--ease),border-color .4s}
-.pcase:hover{transform:translateY(-3px);border-color:#bfd6ea}
+.pcase{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;transition:transform .4s var(--ease),border-color .4s}.pcase:hover,.pcase.act{transform:translateY(-3px);border-color:#bfd6ea}
 .pcase{display:block}
-.pcase .ext{display:inline-block;color:var(--blue);transition:transform .4s var(--ease)}
-.pcase:hover .ext{transform:translate(3px,-3px)}
+.pcase .ext{display:inline-block;color:var(--blue);transition:transform .4s var(--ease)}.pcase:hover .ext,.pcase.act .ext{transform:translate(3px,-3px)}
 .pcase .read{display:block;font-style:normal;font-size:12.5px;font-weight:500;color:var(--blue);margin-top:8px}
 .pcase strong{display:block;font-size:15px;color:var(--navy)}
 .pcase span{display:block;font-size:13.5px;line-height:1.55;color:var(--muted);margin-top:4px}
@@ -546,5 +506,14 @@ window.cookieSettings=function(){box.classList.add('show')};
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "149c758932b041cba6c9332c4fbfa951"}'></script><!-- End Cloudflare Web Analytics -->
+
+<script>
+(function(){
+  if(!matchMedia('(hover: none)').matches) return;
+  var els=document.querySelectorAll('.card, .step, .pcase, .marquee');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('act',e.isIntersecting)})},{rootMargin:'-38% 0px -38% 0px'});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
 </body>
 </html>
