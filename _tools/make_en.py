@@ -85,7 +85,8 @@ T=[
 ('De agenda wordt niet ingeladen omdat u alleen noodzakelijke cookies heeft gekozen.','The calendar is not loaded because you chose essential cookies only.'),
 ('Agenda openen in nieuw venster ↗','Open calendar in new window ↗'),
 ('>Toch hier laden<','>Load here anyway<'),
-('<li><a class="l lang" href="/en/" hreflang="en" lang="en" title="English">EN</a></li>','<li><a class="l lang" href="/" hreflang="nl" lang="nl" title="Nederlands">NL</a></li>'),
+('<a class="l lang" href="/en/" hreflang="en" lang="en" title="English">EN</a>','<a class="l lang" href="/" hreflang="nl" lang="nl" title="Nederlands">NL</a>'),
+('aria-label="Donkere modus" title="Donkere modus"','aria-label="Dark mode" title="Dark mode"'),
 ('<link rel="alternate" hreflang="x-default" href="https://verstappe.com/">','<link rel="alternate" hreflang="x-default" href="https://verstappe.com/">'),
 ]
 miss=[a for a,b in T if a not in s]
