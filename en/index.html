@@ -307,6 +307,12 @@ body.typing .cur,body.typing .ring{opacity:0!important}
 .hintwrap{position:absolute;left:0;right:0;bottom:clamp(18px,4vh,40px);display:flex;justify-content:center}
 .hintwrap .scrollhint{margin-top:0}
 @media (max-width:760px){.hero{padding:104px 0 128px}}
+/* Desktop/tablet: vast onderaan het scherm tot de bezoeker gaat scrollen, ongeacht schermhoogte of zoom */
+@media (min-width:761px){.hintwrap{position:fixed;z-index:40;pointer-events:none;transition:opacity .5s var(--ease),transform .5s var(--ease)}.hintwrap .scrollhint{pointer-events:auto}body.past-top .hintwrap{opacity:0;transform:translateY(12px)}body.past-top .hintwrap .scrollhint{pointer-events:none}}
+
+/* Geen zichtbare scrollbalk; scrollen blijft gewoon werken (voortgang staat in de naar-boven-knop) */
+html{scrollbar-width:none;-ms-overflow-style:none}
+html::-webkit-scrollbar,body::-webkit-scrollbar{display:none;width:0;height:0}
 
 /* Thema-knop naast de taalswitch */
 .nav ul li.prefs{display:flex;align-items:center;gap:8px}
@@ -328,8 +334,8 @@ body.consent-open .totop{opacity:0;pointer-events:none}
 @media (max-width:760px){.consent{right:12px;left:12px;bottom:12px;width:auto}}
 
 /* Dark mode */
-:root{--bg:#fff;--card:#fff}
-html[data-theme=dark]{--ink:#e7ecf3;--muted:#9eabbc;--line:#223047;--surface:#0f1828;--navy:#8fd0f7;--blue:#38BDF8;--bg:#0b1220;--card:#121c2d;color-scheme:dark}
+:root{--bg:#fff;--card:#fff;--mk:#1E3A5F}
+html[data-theme=dark]{--ink:#e7ecf3;--muted:#9eabbc;--line:#223047;--surface:#0f1828;--navy:#8fd0f7;--blue:#38BDF8;--bg:#0b1220;--card:#121c2d;--mk:#dbe6f2;color-scheme:dark}
 html[data-theme=dark] body{background:var(--bg)}
 html[data-theme=dark] header.scrolled{background:rgba(11,18,32,.84)}
 html[data-theme=dark] .nav ul.open{background:var(--bg)}
@@ -368,7 +374,7 @@ html[data-theme=dark] footer .lg-dark{display:inline}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute"><defs><symbol id="mark" viewBox="0 0 150 140"><g fill="none" stroke-linecap="round" stroke-width="10"><path class="m1" d="M14 34 C 48 34, 54 70, 82 70" stroke="#38BDF8"/><path class="m2" d="M14 70 L 82 70" stroke="#0284C7"/><path class="m3" d="M14 106 C 48 106, 54 70, 82 70" stroke="#1E3A5F"/><path d="M82 70 L 108 70" stroke="#1E3A5F"/></g><path d="M104 52 L 130 70 L 104 88 Z" fill="#1E3A5F"/></symbol></defs></svg>
+<svg width="0" height="0" style="position:absolute"><defs><symbol id="mark" viewBox="0 0 150 140"><g fill="none" stroke-linecap="round" stroke-width="10"><path class="m1" d="M14 34 C 48 34, 54 70, 82 70" stroke="#38BDF8"/><path class="m2" d="M14 70 L 82 70" stroke="#0284C7"/><path class="m3" d="M14 106 C 48 106, 54 70, 82 70" style="stroke:var(--mk)"/><path d="M82 70 L 108 70" style="stroke:var(--mk)"/></g><path d="M104 52 L 130 70 L 104 88 Z" style="fill:var(--mk)"/></symbol></defs></svg>
 <div class="cur" id="cur"></div><div class="ring" id="ring"></div>
 <a href="#top" class="totop" id="totop" aria-label="Back to top"><svg class="prog-ring" viewBox="0 0 60 60"><circle cx="30" cy="30" r="27"/><circle id="pring" cx="30" cy="30" r="27"/></svg><svg class="upmark" viewBox="0 0 150 140"><use href="#mark"/></svg></a>
 
@@ -546,7 +552,7 @@ new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecti
 new IntersectionObserver(function(es){es.forEach(function(e){document.getElementById('totop').classList.toggle('away',e.isIntersecting)})},{threshold:.05}).observe(document.getElementById('agenda'));
 var tr=document.getElementById('track');tr.innerHTML+=tr.innerHTML;
 var hdr=document.getElementById('hdr'),last=0,orb=document.getElementById('orb'),photo=document.getElementById('photo');
-function onScroll(){var y=window.scrollY;if(!reduce){var la=document.querySelector('.logo-anim');la.classList.add('flowing');clearTimeout(window.__lf);window.__lf=setTimeout(function(){la.classList.remove('flowing')},900)}var mx2=document.documentElement.scrollHeight-innerHeight;document.getElementById('pring').style.strokeDashoffset=170-170*Math.min(1,y/mx2);document.getElementById('totop').classList.toggle('show',y>innerHeight*.8);hdr.classList.toggle('scrolled',y>10);hdr.classList.toggle('hide',y>last&&y>400);last=y;if(!reduce){if(orb)orb.style.transform='translate3d(0,'+(y*0.25)+'px,0)';var r=photo.getBoundingClientRect();var p=Math.max(-1,Math.min(1,(r.top+r.height/2-innerHeight/2)/innerHeight));photo.style.transform='translate3d(0,'+(p*-30)+'px,0)'}}
+function onScroll(){var y=window.scrollY;if(!reduce){var la=document.querySelector('.logo-anim');la.classList.add('flowing');clearTimeout(window.__lf);window.__lf=setTimeout(function(){la.classList.remove('flowing')},900)}var mx2=document.documentElement.scrollHeight-innerHeight;document.getElementById('pring').style.strokeDashoffset=170-170*Math.min(1,y/mx2);document.getElementById('totop').classList.toggle('show',y>innerHeight*.8);hdr.classList.toggle('scrolled',y>10);document.body.classList.toggle('past-top',y>40);hdr.classList.toggle('hide',y>last&&y>400);last=y;if(!reduce){if(orb)orb.style.transform='translate3d(0,'+(y*0.25)+'px,0)';var r=photo.getBoundingClientRect();var p=Math.max(-1,Math.min(1,(r.top+r.height/2-innerHeight/2)/innerHeight));photo.style.transform='translate3d(0,'+(p*-30)+'px,0)'}}
 addEventListener('scroll',onScroll,{passive:true});onScroll();
 document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
 var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
